@@ -251,10 +251,10 @@ class Characters
     /**
      * Set user
      *
-     * @param \Applicaton\Sonata\UserBundle\Entity\User $user
+     * @param \Application\Sonata\UserBundle\Entity\User $user
      * @return Characters
      */
-    public function setUser(\Applicaton\Sonata\UserBundle\Entity\User $user)
+    public function setUser(\Application\Sonata\UserBundle\Entity\User $user)
     {
         $this->user = $user;
 
@@ -264,7 +264,7 @@ class Characters
     /**
      * Get user
      *
-     * @return \Applicaton\Sonata\UserBundle\Entity\User 
+     * @return \Application\Sonata\UserBundle\Entity\User 
      */
     public function getUser()
     {

@@ -55,7 +55,7 @@ class CharacterAdmin extends Admin
     {
         $datagridMapper
             ->add('user', null, array(
-                    'class' => 'Application\Sonata\UserBundle\Entity\User',
+                    'class'                 => 'Application\Sonata\UserBundle\Entity\User',
                     'label'                 => 'admin.characters.username',
                     'translation_domain'    => 'SonataCustomAdmin',    
                 ))
@@ -94,7 +94,7 @@ class CharacterAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('user.username', null, array(
+            ->add('user', null, array(
                     'label'                 => 'admin.characters.username',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
