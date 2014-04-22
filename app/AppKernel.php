@@ -42,7 +42,9 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),        
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Nexus\CoreBundle\NexusCoreBundle(),
+            new Nexus\AdminBundle\NexusAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

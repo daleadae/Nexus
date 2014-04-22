@@ -10,6 +10,9 @@
             <generator strategy="AUTO" />
         </id>
 
+        <one-to-one field="character" target-entity="Nexus\CoreBundle\Entity\Characters" mapped-by="user">
+        </one-to-one>
+
     </entity>
 
 </doctrine-mapping>

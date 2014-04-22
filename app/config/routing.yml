@@ -1,3 +1,11 @@
+nexus_admin:
+    resource: "@NexusAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+nexus_core:
+    resource: "@NexusCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

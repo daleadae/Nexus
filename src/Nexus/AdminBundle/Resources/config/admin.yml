@@ -1,0 +1,45 @@
+services:
+    sonata.admin.character:
+        class: Nexus\AdminBundle\Admin\CharacterAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Nexus", label: "Character" }
+        arguments:
+            - ~
+            - Nexus\CoreBundle\Entity\Characters
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataCustomAdmin]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+    sonata.admin.monster:
+        class: Nexus\AdminBundle\Admin\MonsterAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Nexus", label: "Monster" }
+        arguments:
+            - ~
+            - Nexus\CoreBundle\Entity\Monster
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataCustomAdmin]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+    sonata.admin.fight:
+        class: Nexus\AdminBundle\Admin\FightAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Nexus", label: "Fight" }
+        arguments:
+            - ~
+            - Nexus\CoreBundle\Entity\Fight
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataCustomAdmin]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+    sonata.admin.experience:
+        class: Nexus\AdminBundle\Admin\ExperienceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Nexus", label: "Experience Chart" }
+        arguments:
+            - ~
+            - Nexus\CoreBundle\Entity\ExperienceChart
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataCustomAdmin]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]

@@ -24,15 +24,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    
+    /**
+     * @var integer $toto
+     */
+    protected $toto;
+
     /**
      * @var integer $id
      */
     protected $id;
-
-    /**
-     * @ORM\OneToOne(targetEntity="Nexus\CoreBundle\Entity\Characters", mappedBy="user")
-     */
-    private $character;
 
     /**
      * Get id

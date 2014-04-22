@@ -77,6 +77,9 @@ swiftmailer:
 sonata_user:
     security_acl: false
     manager_type: orm # can be orm or mongodb
+    class:
+        user: Application\Sonata\UserBundle\Entity\User
+        group: Application\Sonata\UserBundle\Entity\Group
 
 #Sonata Block Configuration
 sonata_block:
@@ -89,7 +92,7 @@ sonata_block:
 
 #Sonata Admin UI Configuration
 sonata_admin:
-    title:       Admin
+    title:       Nexus Admin
     #title_logo: bundles/acmedemo/img/fancy_acme_logo.png
     security: 
         handler: sonata.admin.security.handler.role  
@@ -99,7 +102,6 @@ fos_user:
     db_driver:      orm # can be orm or odm
     firewall_name:  main
     user_class:     Application\Sonata\UserBundle\Entity\User
-
 
     group:
         group_class:   Application\Sonata\UserBundle\Entity\Group
@@ -125,7 +127,7 @@ services:
             - name: twig.extension
 
 jms_i18n_routing:
-    default_locale: fr
+    default_locale: en
     locales: %locale_available%
     strategy: prefix_except_default
 
@@ -137,3 +139,10 @@ jms_translation:
             excluded_names: [*TestCase.php, *Test.php]
             excluded_dirs: [cache, data, logs]
             extractors: [jms_i18n_routing]
+        admin:
+            dirs: [%kernel.root_dir%/../src/Nexus/AdminBundle]
+            output_dir: %kernel.root_dir%/../src/Nexus/AdminBundle/Resources/translations
+            excluded_names: [*TestCase.php, *Test.php]
+            excluded_dirs: [cache, data, logs]
+            extractors: [jms_i18n_routing]
+            keep: true

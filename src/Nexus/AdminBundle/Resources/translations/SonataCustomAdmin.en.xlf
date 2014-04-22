@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2014-04-22T23:24:04Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="a89a3cf55367e7c1531bc93ac0ac0923b4f55030" resname="admin.characters.attack_speed">
+        <source>admin.characters.attack_speed</source>
+        <target>Attack Speed</target>
+      </trans-unit>
+      <trans-unit id="c076085406b11e47216034187c75c57861434b83" resname="admin.characters.avatar">
+        <source>admin.characters.avatar</source>
+        <target>Avatar</target>
+      </trans-unit>
+      <trans-unit id="723ad86c45d19935df4f95e658bdb898657d2a63" resname="admin.characters.experience">
+        <source>admin.characters.experience</source>
+        <target>Experience</target>
+      </trans-unit>
+      <trans-unit id="ed51964281ad804b87654cb27b676e83ef321495" resname="admin.characters.health">
+        <source>admin.characters.health</source>
+        <target>Health Point</target>
+      </trans-unit>
+      <trans-unit id="360bba9f5356e851c7d80baed381fc303455818c" resname="admin.characters.level">
+        <source>admin.characters.level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="e6aa570661e8507a3b4bf952a83dfde1381c12a6" resname="admin.characters.name">
+        <source>admin.characters.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="33e4dfd6e43aeb310da59e4185534616bdfcdb8e" resname="admin.characters.power">
+        <source>admin.characters.power</source>
+        <target>Power</target>
+      </trans-unit>
+      <trans-unit id="6b4d6b429e7133b9279a7de16462e4cf3e68be11" resname="admin.characters.username">
+        <source>admin.characters.username</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="9e15b248bebcafc43f0be3d359372280649de2bf" resname="admin.experience.experience">
+        <source>admin.experience.experience</source>
+        <target>Experience</target>
+      </trans-unit>
+      <trans-unit id="b5c0866cda6c36bf4feca474982eb7d62f9bf07e" resname="admin.experience.level">
+        <source>admin.experience.level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="4dcdd678bd59b71455c9bae6c509849823b75bee" resname="admin.fight.damage_done">
+        <source>admin.fight.damage_done</source>
+        <target>Damage done</target>
+      </trans-unit>
+      <trans-unit id="311f05bff0c0dd3b923e90c871e2e23e41304de2" resname="admin.fight.damage_taken">
+        <source>admin.fight.damage_taken</source>
+        <target>Damage taken</target>
+      </trans-unit>
+      <trans-unit id="1f73b0b3740791597cd210c1deb3dbb9dd78364c" resname="admin.fight.date">
+        <source>admin.fight.date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="733e4df69e80384f228d9c8a4809c11381da6566" resname="admin.fight.result">
+        <source>admin.fight.result</source>
+        <target>Result</target>
+      </trans-unit>
+      <trans-unit id="89bbd0491bd98e1fd891ed5277c5bf4765d092c5" resname="admin.monster.avatar">
+        <source>admin.monster.avatar</source>
+        <target>Avatar</target>
+      </trans-unit>
+      <trans-unit id="690f68b464402ffc4712dcfd7382499983ff8782" resname="admin.monster.name">
+        <source>admin.monster.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="722fbdd82b32ed65dd7d7890a50610783243ff8d" resname="breadcrumb.link_characters_list">
+        <source>breadcrumb.link_characters_list</source>
+        <target>Characters</target>
+      </trans-unit>
+      <trans-unit id="9f7910b1e8564412e89892bbf6acb6d34dd7ecb5" resname="breadcrumb.link_experience_chart_list">
+        <source>breadcrumb.link_experience_chart_list</source>
+        <target>Experience Chart</target>
+      </trans-unit>
+      <trans-unit id="3facaf1112b2365fd1b168207d9d6e8a1b7f3105" resname="breadcrumb.link_fight_list">
+        <source>breadcrumb.link_fight_list</source>
+        <target>Fight</target>
+      </trans-unit>
+      <trans-unit id="85cd53fcf167f6b7acbae388fa1329fd04476b7a" resname="breadcrumb.link_monster_list">
+        <source>breadcrumb.link_monster_list</source>
+        <target>Monsters</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
