@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ab27f505315a8ea3b8b1125400e192e1",
+    "hash": "19c7745e8a9956f8b9ef28389d383837",
     "packages": [
         {
             "name": "craue/formflow-bundle",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craue/CraueFormFlowBundle.git",
-                "reference": "48a3f74faf8896dde41d33668580a6d2022ec2e5"
+                "reference": "c4ddb216595146764e2ba0da48a247b7372512fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/48a3f74faf8896dde41d33668580a6d2022ec2e5",
-                "reference": "48a3f74faf8896dde41d33668580a6d2022ec2e5",
+                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/c4ddb216595146764e2ba0da48a247b7372512fe",
+                "reference": "c4ddb216595146764e2ba0da48a247b7372512fe",
                 "shasum": ""
             },
             "require": {
@@ -62,7 +62,7 @@
                 "Symfony2",
                 "form"
             ],
-            "time": "2014-04-20 09:47:22"
+            "time": "2014-04-24 12:54:06"
         },
         {
             "name": "doctrine/annotations",
@@ -1922,16 +1922,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1afc39690e7414412face1f8cbf67b73db34485c"
+                "reference": "65026b610f8c19e61d7242f600530677b0466aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1afc39690e7414412face1f8cbf67b73db34485c",
-                "reference": "1afc39690e7414412face1f8cbf67b73db34485c",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/65026b610f8c19e61d7242f600530677b0466aac",
+                "reference": "65026b610f8c19e61d7242f600530677b0466aac",
                 "shasum": ""
             },
             "require": {
@@ -1986,7 +1986,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-04-20 16:41:26"
+            "time": "2014-04-24 13:29:03"
         },
         {
             "name": "mopa/bootstrap-bundle",
@@ -2522,12 +2522,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "40ed191d1a8d9367673094386315adf7e319b5ef"
+                "reference": "0527005a864afc7c5e8057fd390b0ca30f576b5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/40ed191d1a8d9367673094386315adf7e319b5ef",
-                "reference": "40ed191d1a8d9367673094386315adf7e319b5ef",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/0527005a864afc7c5e8057fd390b0ca30f576b5e",
+                "reference": "0527005a864afc7c5e8057fd390b0ca30f576b5e",
                 "shasum": ""
             },
             "require": {
@@ -2593,7 +2593,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-04-22 15:38:42"
+            "time": "2014-04-24 17:41:00"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2601,12 +2601,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "75e6dc2de4bfdc0ca4fd80c4860e654a14220ac5"
+                "reference": "647ae4040823ddf062a70ff274da9e598c43b053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/75e6dc2de4bfdc0ca4fd80c4860e654a14220ac5",
-                "reference": "75e6dc2de4bfdc0ca4fd80c4860e654a14220ac5",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/647ae4040823ddf062a70ff274da9e598c43b053",
+                "reference": "647ae4040823ddf062a70ff274da9e598c43b053",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2657,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2014-04-14 16:19:08"
+            "time": "2014-04-24 08:39:21"
         },
         {
             "name": "sonata-project/cache",
@@ -2836,12 +2836,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
-                "reference": "9e03b1b1d65ef42aca2f52c0e99eb4c2aae10ddd"
+                "reference": "18ea96f455a4ea3dd2b3ae1cdeca36e7279ea83f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/9e03b1b1d65ef42aca2f52c0e99eb4c2aae10ddd",
-                "reference": "9e03b1b1d65ef42aca2f52c0e99eb4c2aae10ddd",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/18ea96f455a4ea3dd2b3ae1cdeca36e7279ea83f",
+                "reference": "18ea96f455a4ea3dd2b3ae1cdeca36e7279ea83f",
                 "shasum": ""
             },
             "require": {
@@ -2896,7 +2896,7 @@
                 "generator",
                 "sonata"
             ],
-            "time": "2014-04-17 00:10:12"
+            "time": "2014-04-23 08:15:01"
         },
         {
             "name": "sonata-project/easy-extends-bundle",

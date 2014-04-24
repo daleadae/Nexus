@@ -13,10 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Characters
 {
     /**
-     * @ORM\OneToOne(targetEntity="Applicaton\Sonata\UserBundle\Entity\User", inversedBy="character")
+     * @ORM\OneToOne(targetEntity="Application\Sonata\UserBundle\Entity\User", inversedBy="character")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character")
+     */
+    private $updates;    
 
     /**
      * @var integer
@@ -35,9 +40,9 @@ class Characters
     private $name;
 
     /**
-     * @var integer
+     * @var float
      *
-     * @ORM\Column(name="experience", type="integer")
+     * @ORM\Column(name="experience", type="float")
      */
     private $experience;
 
@@ -159,7 +164,7 @@ class Characters
     /**
      * Set health
      *
-     * @param integer $health
+     * @param float $health
      * @return Characters
      */
     public function setHealth($health)
@@ -172,7 +177,7 @@ class Characters
     /**
      * Get health
      *
-     * @return integer 
+     * @return float 
      */
     public function getHealth()
     {
@@ -247,4 +252,32 @@ class Characters
     {
         return $this->avatar;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Application\Sonata\UserBundle\Entity\User $user
+     * @return Characters
+     */
+    public function setUser(\Application\Sonata\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Application\Sonata\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function __toString()
+    {
+        return ($this->getName()) ? : '-';
+    }    
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<record>
+		<user>Dubkowitsch, Jennifer (jdubkowitsch)</user>
+		<char_id>1</char_id>
+		<xp1>173.25</xp1>
+		<xp2>48.3</xp2>
+		<dmg1>44</dmg1>
+		<dmg2>19</dmg2>
+		<armor>0.80672268907563</armor>
+		<resist>0.625</resist>
+		<mitigation>0.757441959834781</mitigation>
+		<as>1.15</as>
+	</record>
+</data-set>

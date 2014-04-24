@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2014-04-22T22:49:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2014-04-24T22:52:50Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit id="88e8abbfcd620b067d7a2532a980f3867dd9659c" resname="acme_demo_secured_hello">
-        <source>/demo/secured/hello</source>
-        <target state="new">/demo/secured/hello</target>
-      </trans-unit>
       <trans-unit id="4b9a3b503c850b658a75404fc87a7dddd607ca6b" resname="admin_nexus_core_characters_batch">
         <source>/admin/nexus/core/characters/batch</source>
         <target state="new">/admin/nexus/core/characters/batch</target>
@@ -37,6 +33,110 @@
       <trans-unit id="fae8af8b5a23d44c12bfae3e5ccf571005cc6cbb" resname="admin_nexus_core_characters_show">
         <source>/admin/nexus/core/characters/{id}/show</source>
         <target state="new">/admin/nexus/core/characters/{id}/show</target>
+      </trans-unit>
+      <trans-unit id="f6abda5dce1e28e600e2e1372625fbd60d60bd4a" resname="admin_nexus_core_experiencechart_batch">
+        <source>/admin/nexus/core/experiencechart/batch</source>
+        <target state="new">/admin/nexus/core/experiencechart/batch</target>
+      </trans-unit>
+      <trans-unit id="b1377f0911a375380ebc70725c20b00b56b37220" resname="admin_nexus_core_experiencechart_create">
+        <source>/admin/nexus/core/experiencechart/create</source>
+        <target state="new">/admin/nexus/core/experiencechart/create</target>
+      </trans-unit>
+      <trans-unit id="403d851fd88c6326b1d49fa5f6ee4c500d14bcbc" resname="admin_nexus_core_experiencechart_delete">
+        <source>/admin/nexus/core/experiencechart/{id}/delete</source>
+        <target state="new">/admin/nexus/core/experiencechart/{id}/delete</target>
+      </trans-unit>
+      <trans-unit id="0900b2d3ea0aaa12952bfb14adb2b9f7e270383e" resname="admin_nexus_core_experiencechart_edit">
+        <source>/admin/nexus/core/experiencechart/{id}/edit</source>
+        <target state="new">/admin/nexus/core/experiencechart/{id}/edit</target>
+      </trans-unit>
+      <trans-unit id="72fda5ad43af8c98578d655d01f605604c1f9f5c" resname="admin_nexus_core_experiencechart_export">
+        <source>/admin/nexus/core/experiencechart/export</source>
+        <target state="new">/admin/nexus/core/experiencechart/export</target>
+      </trans-unit>
+      <trans-unit id="5c6a7c6f0c50d2a68e8fdbd061225da23a97e68c" resname="admin_nexus_core_experiencechart_list">
+        <source>/admin/nexus/core/experiencechart/list</source>
+        <target state="new">/admin/nexus/core/experiencechart/list</target>
+      </trans-unit>
+      <trans-unit id="3f2487c3fc56a727e079066adb4337fe18b57cb3" resname="admin_nexus_core_experiencechart_show">
+        <source>/admin/nexus/core/experiencechart/{id}/show</source>
+        <target state="new">/admin/nexus/core/experiencechart/{id}/show</target>
+      </trans-unit>
+      <trans-unit id="38a13d34dce14334e7c8c1305486d8fad32fbb3a" resname="admin_nexus_core_fight_batch">
+        <source>/admin/nexus/core/fight/batch</source>
+        <target state="new">/admin/nexus/core/fight/batch</target>
+      </trans-unit>
+      <trans-unit id="ef834c047ddd12c79d28c46a140b6e15f51e11d1" resname="admin_nexus_core_fight_create">
+        <source>/admin/nexus/core/fight/create</source>
+        <target state="new">/admin/nexus/core/fight/create</target>
+      </trans-unit>
+      <trans-unit id="740b70c1391f7f0b8f8165116dbcf1dc7eff20d3" resname="admin_nexus_core_fight_delete">
+        <source>/admin/nexus/core/fight/{id}/delete</source>
+        <target state="new">/admin/nexus/core/fight/{id}/delete</target>
+      </trans-unit>
+      <trans-unit id="71df330a2bed8d8afb30a3dddf88fb833e43baa3" resname="admin_nexus_core_fight_edit">
+        <source>/admin/nexus/core/fight/{id}/edit</source>
+        <target state="new">/admin/nexus/core/fight/{id}/edit</target>
+      </trans-unit>
+      <trans-unit id="9fd448006eb00594a96eb52db23bd3a28b0423fa" resname="admin_nexus_core_fight_export">
+        <source>/admin/nexus/core/fight/export</source>
+        <target state="new">/admin/nexus/core/fight/export</target>
+      </trans-unit>
+      <trans-unit id="971eaa5640d1ad7ce93d36515521f506e2ed8732" resname="admin_nexus_core_fight_list">
+        <source>/admin/nexus/core/fight/list</source>
+        <target state="new">/admin/nexus/core/fight/list</target>
+      </trans-unit>
+      <trans-unit id="7016cbeda537ecc35c0a99847305d581fecd4a4b" resname="admin_nexus_core_fight_show">
+        <source>/admin/nexus/core/fight/{id}/show</source>
+        <target state="new">/admin/nexus/core/fight/{id}/show</target>
+      </trans-unit>
+      <trans-unit id="6af4ec55e04bd7942f74c6ef9b36441c1eae9a45" resname="admin_nexus_core_monster_batch">
+        <source>/admin/nexus/core/monster/batch</source>
+        <target state="new">/admin/nexus/core/monster/batch</target>
+      </trans-unit>
+      <trans-unit id="9ba18bfd0b9dd549c4d716167a540a22df3439c9" resname="admin_nexus_core_monster_create">
+        <source>/admin/nexus/core/monster/create</source>
+        <target state="new">/admin/nexus/core/monster/create</target>
+      </trans-unit>
+      <trans-unit id="e62fb72097856dff067f6b2c80d8825f3dd8d6c8" resname="admin_nexus_core_monster_delete">
+        <source>/admin/nexus/core/monster/{id}/delete</source>
+        <target state="new">/admin/nexus/core/monster/{id}/delete</target>
+      </trans-unit>
+      <trans-unit id="39177b83963742ec1f8f28fc94ed7eb776a30760" resname="admin_nexus_core_monster_edit">
+        <source>/admin/nexus/core/monster/{id}/edit</source>
+        <target state="new">/admin/nexus/core/monster/{id}/edit</target>
+      </trans-unit>
+      <trans-unit id="6586bfc393a887a9eaa21bb0c2d16e046e4fe086" resname="admin_nexus_core_monster_export">
+        <source>/admin/nexus/core/monster/export</source>
+        <target state="new">/admin/nexus/core/monster/export</target>
+      </trans-unit>
+      <trans-unit id="81b87218d669db4533fb0d492106d42139a4d4a5" resname="admin_nexus_core_monster_list">
+        <source>/admin/nexus/core/monster/list</source>
+        <target state="new">/admin/nexus/core/monster/list</target>
+      </trans-unit>
+      <trans-unit id="5e5eacab3ab7b12c2f91513e9d4e6630dfad825a" resname="admin_nexus_core_monster_show">
+        <source>/admin/nexus/core/monster/{id}/show</source>
+        <target state="new">/admin/nexus/core/monster/{id}/show</target>
+      </trans-unit>
+      <trans-unit id="8381b7e5833934e12c82c089582eeb534d93f424" resname="admin_nexus_core_weeklyupdate_batch">
+        <source>/admin/nexus/core/weeklyupdate/batch</source>
+        <target state="new">/admin/nexus/core/weeklyupdate/batch</target>
+      </trans-unit>
+      <trans-unit id="5989727cc2f3a39fd747bc87770523001d2113d1" resname="admin_nexus_core_weeklyupdate_create">
+        <source>/admin/nexus/core/weeklyupdate/create</source>
+        <target state="new">/admin/nexus/core/weeklyupdate/create</target>
+      </trans-unit>
+      <trans-unit id="29041ff347a272394e477232b44f3472e547c075" resname="admin_nexus_core_weeklyupdate_export">
+        <source>/admin/nexus/core/weeklyupdate/export</source>
+        <target state="new">/admin/nexus/core/weeklyupdate/export</target>
+      </trans-unit>
+      <trans-unit id="f65164e932c6c3e67096a66f3e1202d824796992" resname="admin_nexus_core_weeklyupdate_list">
+        <source>/admin/nexus/core/weeklyupdate/list</source>
+        <target state="new">/admin/nexus/core/weeklyupdate/list</target>
+      </trans-unit>
+      <trans-unit id="6aeddb34acae4061c10b2d99fa31a304accf7de4" resname="admin_nexus_core_weeklyupdate_show">
+        <source>/admin/nexus/core/weeklyupdate/{id}/show</source>
+        <target state="new">/admin/nexus/core/weeklyupdate/{id}/show</target>
       </trans-unit>
       <trans-unit id="e0951504a6aecf5897fc0c572772a45a70b9b3da" resname="admin_sonata_user_group_batch">
         <source>/admin/sonata/user/group/batch</source>
@@ -163,8 +263,12 @@
         <target state="new">/hello/{name}</target>
       </trans-unit>
       <trans-unit id="43f07689cdb0938a26df1cf4a803d8989dd2a945" resname="nexus_core_homepage">
-        <source>/hello/{name}</source>
-        <target state="new">/hello/{name}</target>
+        <source>/</source>
+        <target state="new">/</target>
+      </trans-unit>
+      <trans-unit id="e4684a2846013766875f48b816e44f4794a7346b" resname="nexus_core_toto">
+        <source>/tata</source>
+        <target state="new">/tata</target>
       </trans-unit>
       <trans-unit id="04a323eaf4b555f3ca15619a7d4d2b2eeb9527af" resname="sonata_admin_append_form_element">
         <source>/admin/core/append-form-field-element</source>

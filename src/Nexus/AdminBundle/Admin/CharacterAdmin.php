@@ -98,6 +98,10 @@ class CharacterAdmin extends Admin
                     'label'                 => 'admin.characters.username',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
+            ->add('id', null, array(
+                    'label'                 => 'admin.characters.id',
+                    'translation_domain'    =>  'SonataCustomAdmin',
+                ))            
             ->addIdentifier('name', null, array(
                     'label'                 => 'admin.characters.name',
                     'translation_domain'    =>  'SonataCustomAdmin',

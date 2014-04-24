@@ -19,6 +19,11 @@ class Characters
     private $user;
 
     /**
+     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character", cascade={"persist"})
+     */
+    private $updates;    
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -35,9 +40,9 @@ class Characters
     private $name;
 
     /**
-     * @var integer
+     * @var float
      *
-     * @ORM\Column(name="experience", type="integer")
+     * @ORM\Column(name="experience", type="float")
      */
     private $experience;
 
@@ -118,6 +123,8 @@ class Characters
      */
     public function setExperience($experience)
     {
+        $level = sqrt(pow($experience+100, 2)-100);
+        $this->setLevel($level); 
         $this->experience = $experience;
 
         return $this;
@@ -159,7 +166,7 @@ class Characters
     /**
      * Set health
      *
-     * @param integer $health
+     * @param float $health
      * @return Characters
      */
     public function setHealth($health)
@@ -172,7 +179,7 @@ class Characters
     /**
      * Get health
      *
-     * @return integer 
+     * @return float 
      */
     public function getHealth()
     {
@@ -274,5 +281,80 @@ class Characters
     public function __toString()
     {
         return ($this->getName()) ? : '-';
-    }    
+    }
+      
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->updates = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add updates
+     *
+     * @param \Nexus\CoreBundle\Entity\WeeklyUpdate $updates
+     * @return Characters
+     */
+    public function addUpdate(\Nexus\CoreBundle\Entity\WeeklyUpdate $updates)
+    {
+        $this->updates[] = $updates;
+        $updates->setCharacter($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove updates
+     *
+     * @param \Nexus\CoreBundle\Entity\WeeklyUpdate $updates
+     */
+    public function removeUpdate(\Nexus\CoreBundle\Entity\WeeklyUpdate $updates)
+    {
+        $this->updates->removeElement($updates);
+    }
+
+    /**
+     * Get updates
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUpdates()
+    {
+        return $this->updates;
+    }
+
+    /**
+     * Process Damage Taken
+     */
+    public function processDamageTaken($damage)
+    {
+        $health = $this->getHealth();
+        $health -= $damage;
+        if ($health <= 0)  {
+            $this->processDeath();
+        } else {
+            $this->setHealth($health);
+        }
+    }
+
+    /**
+     * Process Death
+     */
+    public function processDeath()
+    {
+        $this->setHealth(100);
+        $experience = $this->getExperience() - ($this->getExperience() * 0.1);
+        $this->setExperience($experience);
+    }
+
+    /**
+     * Get Experience Array
+    */
+    public function getLevelForExperience($experience)
+    {
+
+        return $experience;
+    }
 }
