@@ -13,7 +13,7 @@ class WeeklyUpdateAdminController extends Controller
 {
     public function checkNode($node)
     {
-        return (isset($node) && !empty($node)) ? $node : null;
+        return (isset($node) && (!empty($node) || $node == '0')) ? $node : null;
     }
 
     private function updateFields($object)
@@ -94,7 +94,7 @@ class WeeklyUpdateAdminController extends Controller
                         if (count($errorList) > 0) {
                             $error = true;
                             foreach ($errorList as $errors) {
-                                $error_log .= '<strong>'.$errors->getPropertyPath().'</strong>: '.$errors->getMessage().'<br/>';
+                                $error_log .= '<strong>'.$errors->getPropertyPath().'</strong>: '.$errors->getMessage().' ('.$character->getName().')<br/>';
                             }
                         } else  {
                            $entityManager->persist($character);           

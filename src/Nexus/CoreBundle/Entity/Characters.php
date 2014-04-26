@@ -151,6 +151,9 @@ class Characters
     {
         $this->level = $level;
 
+        $power = 1+($level-1)/10;
+        $this->setPower($power);
+
         return $this;
     }
 
@@ -345,7 +348,7 @@ class Characters
     public function processDeath()
     {
         $this->setHealth(100);
-        $experience = $this->getExperience() - ($this->getExperience() * 0.1);
+        $experience = round($this->getExperience() - ($this->getExperience() * 0.1));
         $this->setExperience($experience);
     }
 

@@ -27,20 +27,12 @@ class CharacterAdmin extends Admin
                     'label'                 => 'admin.characters.experience',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
-            ->add('level', null, array(
-                    'label'                 => 'admin.characters.level',
-                    'translation_domain'    =>  'SonataCustomAdmin',
-                ))
             ->add('health', null, array(
                     'label'                 => 'admin.characters.health',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
             ->add('attackSpeed', null, array(
                     'label'                 => 'admin.characters.attack_speed',
-                    'translation_domain'    =>  'SonataCustomAdmin',
-                ))
-            ->add('power', null, array(
-                    'label'                 => 'admin.characters.power',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
             ->add('avatar', null, array(
