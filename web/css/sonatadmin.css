@@ -1,0 +1,9 @@
+.avatar-img {
+	cursor: pointer;
+	width: 40px;
+}
+
+.avatar-selected {
+	border: 1px solid #333;
+	background-color: #ccc;
+}

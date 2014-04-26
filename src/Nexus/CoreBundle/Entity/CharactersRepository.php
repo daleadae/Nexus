@@ -12,4 +12,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class CharactersRepository extends EntityRepository
 {
+	public function getLeaderBoard()
+	{
+		// On utilise le QueryBuilder créé par le repository directement pour gagner du temps
+		// Plus besoin de faire le select() ni le from() par la suite donc
+		$qb = $this->createQueryBuilder('c');
+
+		$qb->leftJoin('c.user', 'u')
+		   ->addSelect('u')
+		   ->orderBy('c.experience', 'DESC');
+
+		return $qb->getQuery()
+		          ->getResult();
+	}
 }

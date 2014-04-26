@@ -1,1 +1,66 @@
-{% extends "::base.html.twig" %}
+{% extends "NexusCoreBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="row text-center">
+	<h1>Welcome {{ user.username }} !</h1>
+</div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Character sheet</strong></h3></div>
+            <div class="panel-body">
+            	<div class="html-table">
+            		<div class="html-row">
+            			<div class="html-cell">
+            				Name: {{ user.username }} <br/>
+            				Level: {{ user.character.level }}<br/>
+            				Experience: {{ user.character.experience }}<br/>
+            				<br/>
+            				Health: {{ user.character.health }}<br/>
+            				Attack speed: {{ user.character.attackSpeed }}<br/>
+            				Power: {{ user.character.power }}<br/>
+            				DPS: {{ user.character.dps }}
+            			</div>
+            			<div class="html-cell">
+            			</div>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Fight</strong></h3></div>
+            <div class="panel-body">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Leaderboard</strong></h3></div>
+            <div class="panel-body">
+				<table class="table table-striped table-hover table-responsive">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Username</th>
+							<th>Level</th>
+							<th>Experience</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for character in leaderboard %}
+							<tr>
+								<td>{{ loop.index }}.</td>
+								<td>{{ character.user.username }}</td>
+								<td>{{ character.level }}</td>
+								<td>{{ character.experience }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

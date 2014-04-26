@@ -1,0 +1,57 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends "SonataUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Sign in </strong></h3></div>
+            <div class="panel-body">
+                {% block sonata_user_login_error %}
+                    {% if error %}
+                        <div class="alert alert-danger alert-error">{{ error|trans({}, 'FOSUserBundle') }}</div>
+                    {% endif %}
+                {% endblock %}
+                <form action="{{ path("fos_user_security_check") }}" method="post" role="form">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                    <div class="form-group">
+                        <label for="username">{{ 'security.login.username'|trans({}, 'SonataUserBundle') }}</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" style="border-radius:0px" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Enter email/username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">{{ 'security.login.password'|trans({}, 'SonataUserBundle') }}
+                            <a href="{{ path('fos_user_resetting_request') }}">({{ 'forgotten_password'|trans({}, 'SonataUserBundle') }})</a>
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" name="_password" required="required" class="form-control" style="border-radius:0px" id="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox control-group">
+                            <label for="remember_me">
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                                {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                            </label>
+                        </div>
+                    </div>                
+                    <input type="submit" id="_submit" name="_submit" class="btn btn-sm btn-default" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock fos_user_content %}

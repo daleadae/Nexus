@@ -13,11 +13,16 @@ class CharacterAdmin extends Admin
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $container = $this->getConfigurationPool()->getContainer();
+        $avatar_folder = $container->get('kernel')->getRootdir().'/../web/images/NexusCharacter/';
+        foreach (glob($avatar_folder."*.png", GLOB_BRACE) as $filename) {
+            $avatar[basename($filename)] = basename($filename);
+        }
         $formMapper
             ->add('user', null, array(
                     'class'                 => 'Application\Sonata\UserBundle\Entity\User',
                     'label'                 => 'admin.characters.username',
-                    'translation_domain'    => 'SonataCustomAdmin',                    
+                    'translation_domain'    => 'SonataCustomAdmin',                  
                 ))
             ->add('name', null, array(
                     'label'                 => 'admin.characters.name',
@@ -35,9 +40,11 @@ class CharacterAdmin extends Admin
                     'label'                 => 'admin.characters.attack_speed',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
-            ->add('avatar', null, array(
-                    'label'                 => 'admin.characters.avatar',
-                    'translation_domain'    =>  'SonataCustomAdmin',
+            ->add('avatar', 'choice', array(
+                    'label'                     => 'admin.characters.avatar',
+                    'choices'                   => $avatar,
+                    'attr'                      => array('class' => 'avatar hide'),
+                    'translation_domain'        =>  'SonataCustomAdmin',
                 ))                                                  
         ;
     }
@@ -74,11 +81,7 @@ class CharacterAdmin extends Admin
             ->add('power', null, array(
                     'label'                 => 'admin.characters.power',
                     'translation_domain'    =>  'SonataCustomAdmin',
-                ))
-            ->add('avatar', null, array(
-                    'label'                 => 'admin.characters.avatar',
-                    'translation_domain'    =>  'SonataCustomAdmin',
-                ))       
+                ))    
         ;
     }
 
@@ -120,6 +123,7 @@ class CharacterAdmin extends Admin
                 ))
             ->add('avatar', null, array(
                     'label'                 => 'admin.characters.avatar',
+                    'template'              => 'NexusAdminBundle:CharacterAdmin:list.html.twig',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))       
         ;

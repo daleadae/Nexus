@@ -10,6 +10,7 @@ services:
         calls:
             - [ setTranslationDomain, [SonataCustomAdmin]]
             - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+            - [ setTemplate, [edit, NexusAdminBundle:CharacterAdmin:edit.html.twig]]
     sonata.admin.weekly_update:
         class: Nexus\AdminBundle\Admin\WeeklyUpdateAdmin
         tags:
@@ -32,6 +33,7 @@ services:
         calls:
             - [ setTranslationDomain, [SonataCustomAdmin]]
             - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+            - [ setTemplate, [edit, NexusAdminBundle:MonsterAdmin:edit.html.twig]]
     sonata.admin.fight:
         class: Nexus\AdminBundle\Admin\FightAdmin
         tags:

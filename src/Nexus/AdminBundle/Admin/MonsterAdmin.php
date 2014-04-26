@@ -13,13 +13,20 @@ class MonsterAdmin extends Admin
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $container = $this->getConfigurationPool()->getContainer();
+        $avatar_folder = $container->get('kernel')->getRootdir().'/../web/images/NexusMonster/';
+        foreach (glob($avatar_folder."*.png", GLOB_BRACE) as $filename) {
+            $avatar[basename($filename)] = basename($filename);
+        }        
         $formMapper
             ->add('name', null, array(
                     'label'                 => 'admin.monster.name',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
-            ->add('avatar', null, array(
+            ->add('avatar', 'choice', array(
                     'label'                 => 'admin.monster.avatar',
+                    'choices'                   => $avatar,
+                    'attr'                      => array('class' => 'avatar hide'),                    
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))                                               
         ;
@@ -31,10 +38,6 @@ class MonsterAdmin extends Admin
         $datagridMapper
             ->add('name', null, array(
                     'label'                 => 'admin.monster.name',
-                    'translation_domain'    =>  'SonataCustomAdmin',
-                ))
-            ->add('avatar', null, array(
-                    'label'                 => 'admin.monster.avatar',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
         ;
@@ -50,6 +53,7 @@ class MonsterAdmin extends Admin
                 ))
             ->add('avatar', null, array(
                     'label'                 => 'admin.monster.avatar',
+                    'template'              => 'NexusAdminBundle:CharacterAdmin:list.html.twig',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))   
         ;

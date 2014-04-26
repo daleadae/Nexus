@@ -361,4 +361,14 @@ class Characters
         $level = sqrt($experience+10000)-100;
         return floor($level);
     }
+
+    /**
+     * Get Character DPS
+     * @return integer
+    */
+    public function getDPS()
+    {
+        $dps = $this->getPower() * $this->getAttackSpeed();
+        return $dps;
+    }    
 }

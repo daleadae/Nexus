@@ -43,4 +43,28 @@ class User extends BaseUser
     {
         return $this->id;
     }
+
+    /**
+     * Set user
+     *         
+     * @param  \Nexus\CoreBundle\Entity\Characters $character
+     * @return Characters
+     */
+    public function setCharacter(\Nexus\CoreBundle\Entity\Characters $character)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Nexus\CoreBundle\Entity\Characters $character
+     */
+    public function getCharacter()
+    {
+        return $this->character;
+    }
+
 }
