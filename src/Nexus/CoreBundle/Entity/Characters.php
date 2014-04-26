@@ -123,9 +123,10 @@ class Characters
      */
     public function setExperience($experience)
     {
-        $level = sqrt(pow($experience+100, 2)-100);
-        $this->setLevel($level); 
         $this->experience = $experience;
+
+        // XP Change -> Calc new level
+        $this->setLevel($this->getLevelForExperience($experience));
 
         return $this;
     }
@@ -172,6 +173,9 @@ class Characters
     public function setHealth($health)
     {
         $this->health = $health;
+        if ($this->health <= 0)  {
+            $this->processDeath();
+        }
 
         return $this;
     }
@@ -332,11 +336,7 @@ class Characters
     {
         $health = $this->getHealth();
         $health -= $damage;
-        if ($health <= 0)  {
-            $this->processDeath();
-        } else {
-            $this->setHealth($health);
-        }
+        $this->setHealth($health);
     }
 
     /**
@@ -351,10 +351,11 @@ class Characters
 
     /**
      * Get Experience Array
+     * @return integer
     */
     public function getLevelForExperience($experience)
     {
-
-        return $experience;
+        $level = sqrt($experience+10000)-100;
+        return floor($level);
     }
 }
