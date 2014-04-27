@@ -62,7 +62,13 @@ class Monster extends BaseUnit
      * @var float
      *
      */
-    private $experience;    
+    private $experience;
+
+    /**
+     * @var float
+     *
+     */
+    private $experienceReward;
 
     /**
      * @var float
@@ -200,7 +206,7 @@ class Monster extends BaseUnit
     public function getPower()
     {
         return $this->power;
-    }    
+    }
 
     /**
      * Set experience
@@ -222,7 +228,30 @@ class Monster extends BaseUnit
      */
     public function getExperience()
     {
-        return $this->experience;
+        return $this->getExperienceForLevel($this->getLevel());
+    }        
+
+    /**
+     * Set experience
+     *
+     * @param integer $experience
+     * @return Monster
+     */
+    public function setExperienceReward($experience)
+    {
+        $this->experienceReward = round($experience);
+
+        return $this;
+    }
+
+    /**
+     * Get experience
+     *
+     * @return integer 
+     */
+    public function getExperienceReward()
+    {
+        return $this->experienceReward;
     }
 
     /**
@@ -265,12 +294,12 @@ class Monster extends BaseUnit
             $this->setAttackSpeed(1);           // Attack Speed = 1 AS
             $this->setHealth(50);               // Health = 50 HP
             $experience = ($this->getExperienceForLevel($this->level+1)-$this->getExperienceForLevel($this->level))*0.2;
-            $this->setExperience($experience);  // Experience = 20% experience of the current level
+            $this->setExperienceReward($experience);  // Experience = 20% experience of the current level
         } else {                                // Mob type = elite
             $this->setAttackSpeed(1.2);         // Attack Speed = 1.2 AS
             $this->setHealth(75);               // Hleath = 75 HP
             $experience = ($this->getExperienceForLevel($this->level+1)-$this->getExperienceForLevel($this->level))*0.4;
-            $this->setExperience($experience);  // Experience = 40% experience of the current leve
+            $this->setExperienceReward($experience);  // Experience = 40% experience of the current leve
         }
 
         return $this;

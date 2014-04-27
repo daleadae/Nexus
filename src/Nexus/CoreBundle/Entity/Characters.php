@@ -58,7 +58,7 @@ class Characters extends BaseUnit
      *
      * @ORM\Column(name="experience", type="float")
      */
-    private $experience;
+    private $experience; 
 
     /**
      * @var integer
@@ -140,7 +140,7 @@ class Characters extends BaseUnit
         $this->experience = round($experience);
 
         // XP Change -> Calc new level
-        $this->setLevel($this->getLevelForExperience($experience));
+        $this->setLevel($this->getLevelForExperience($experience));      
 
         return $this;
     }

@@ -18,9 +18,10 @@ class APIController extends Controller
         $monsters = $monster_rep->findAll();
         $monster = $monsters[rand(0,count($monsters)-1)];
 
+        $json = $serializer->serialize($user->getCharacter(), 'json');
         $fight->addPlayer($user->getCharacter());
         $fight->addMonster($monster);
-        $data = $fight->processFight();
+        $data = $fight->launchFight();
 
         $json = $serializer->serialize($data, 'json');
 

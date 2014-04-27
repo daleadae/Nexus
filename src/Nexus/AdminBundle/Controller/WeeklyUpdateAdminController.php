@@ -80,11 +80,12 @@ class WeeklyUpdateAdminController extends Controller
                         $weeklyUpdate->setResist($this->checkNode((string)$update->resist));
                         $weeklyUpdate->setMitigation($this->checkNode((string)$update->mitigation));
                         $weeklyUpdate->setAttackSpeed($this->checkNode((string)$update->as));
-                        $damageTaken = floor(((float)$update->dmg1*1.5 + $update->dmg2)*(1-(float)$update->mitigation));
+                        $damageTaken = floor(((float)$update->dmg1+ $update->dmg2)*(1-(float)$update->mitigation));
                         $weeklyUpdate->setHealthLost($damageTaken);
 
                         $character->processDamageTaken($damageTaken);
                         $character->setAttackSpeed((float)$update->as);
+                        $character->processExperienceGain((float)$update->xp1+(float)$update->xp2);
                         $character->setFight(3);
                         $power = 1 + ($character->getLevel() - 1)/10;
                         $character->setPower($power);

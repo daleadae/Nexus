@@ -23,38 +23,46 @@ class FightManager
     	$this->setupMob();
     }
 
-    public function processFight()
-    {
-
+    public function launchFight() {
         if ($this->player->getFight() > 0) {
-            $result['status'] = "success";
-            $player_current_hp = $this->player->getHealth();
-            $hp_lost = 0;
-            // Process Fight
-            while ($player_current_hp-$hp_lost > 0 && $this->mob->getHealth() > 0) {
-                $this->mob->processDamageTaken($this->player->getDPS()); // Set Mob Current HP - Player DPS
-                if ($this->mob->getHealth() > 0) { // If Mob alive
-                    $hp_lost += $this->mob->getDPS(); // Stock HP Lost
-                    $this->player->processDamageTaken($this->mob->getDPS()); // Set Player Current HP - Mob DPS
-                }
-                $result['fight'][] = array('player' => $this->player->getHealth(), 'monster' => $this->mob->getHealth());
-            }
-
-            if ($this->mob->getHealth() <= 0) { // If Mob Dead
-                $this->player->processExperienceGain($this->mob->getExperience()); // Add Mob experience to current player experience
-                $this->player->setHealth($this->player->getHealth()+($hp_lost/2)); // Regen Player HP !
-            }
-
-            $this->player->setFight($this->player->getFight()-1);
-            $this->savePlayerState();
-
-            $result['monster'] = $this->mob;            
-            $result['character'] = $this->player;
+            $this->processFight();
+            $this->player->setFight($this->player->getFight()-1); // Remove one to total fight allowed
+            $this->savePlayerState(); // Save player state
+            $this->result['monster'] = $this->mob;
+            $this->result['character'] = $this->player;            
         } else {
-            $result['status'] = "error";
-            $result['message'] = "You need to rest before fighting again.";
+            $this->result['status'] = "error";
+            $this->result['info']['message'] = "You need to rest before fighting again.";            
         }
-        return $result;
+
+        return $this->result;
+    }
+
+    private function processFight()
+    {
+        $this->result['status'] = "success";
+        $player_current_hp = $this->player->getHealth();
+        $hp_lost = 0;
+        // Process Fight
+        while ($player_current_hp-$hp_lost > 0 && $this->mob->getHealth() > 0) {
+            $this->mob->processDamageTaken($this->player->getDPS()); // Set Mob Current HP - Player DPS
+            if ($this->mob->getHealth() > 0) { // If Mob alive
+                $hp_lost += $this->mob->getDPS(); // Stock HP Lost
+                $this->player->processDamageTaken($this->mob->getDPS()); // Set Player Current HP - Mob DPS
+            }
+            $this->result['fight'][] = array('player' => $this->player->getHealth(), 'monster' => $this->mob->getHealth());
+        }
+
+        if ($this->mob->getHealth() <= 0) { // If Mob Dead
+            $this->player->processExperienceGain($this->mob->getExperienceReward()); // Add Mob experience to current player experience
+            $this->player->setHealth($this->player->getHealth()+($hp_lost/2)); // Regen Player HP !
+            $this->result['fight'][] = array('player' => $this->player->getHealth(), 'monster' => 'dead');
+            $this->result['info']['type'] = 'success';
+            $this->result['info']['message'] = '<strong>Victory!</strong> You gain <strong>'.$this->mob->getExperienceReward().'</strong> xp.';
+         } else {
+            $this->result['info']['type'] = 'danger';
+            $this->result['info']['message'] = '<strong>Defeat!</strong> You die and lose some of your xp.';
+         }
     }
 
     private function setupMob() {
