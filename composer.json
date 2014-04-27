@@ -22,6 +22,7 @@
         "jms/translation-bundle": "dev-master",
         "jms/di-extra-bundle": "dev-master",
         "jms/i18n-routing-bundle": "dev-master",
+        "jms/serializer-bundle": "dev-master",        
         "mopa/bootstrap-bundle": "v3.0.0-beta3",
         "twbs/bootstrap": "v3.0.0",
         "knplabs/knp-paginator-bundle": "dev-master",

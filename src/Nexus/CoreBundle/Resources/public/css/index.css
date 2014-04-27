@@ -1,0 +1,25 @@
+.img-avatar, .img-monster-avatar {
+	width: 80px;
+}
+
+.img-char-sheet {
+	width: 20px;
+	margin-right: 5px;
+}
+
+.img-fight {
+	width: 20px;
+}
+
+.img-health, .img-xp {
+	float: left;
+}
+
+.character-name {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.character-level {
+	font-size: 16px;
+}

@@ -2,24 +2,30 @@
 
 namespace Nexus\CoreBundle\Entity;
 
+use Nexus\CoreBundle\Models\UnitModel as BaseUnit;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Characters
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Nexus\CoreBundle\Entity\CharactersRepository")
+ * @ExclusionPolicy("none")
  */
-class Characters
+class Characters extends BaseUnit
 {
     /**
      * @ORM\OneToOne(targetEntity="Application\Sonata\UserBundle\Entity\User", inversedBy="character")
      * @ORM\JoinColumn(nullable=false)
+     * @Exclude
      */
     private $user;
 
     /**
      * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character", cascade={"persist"})
+     * @Exclude
      */
     private $updates;    
 
@@ -29,8 +35,16 @@ class Characters
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Exclude
      */
     private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fight", type="integer", options={"default" = 3})
+     */
+    private $fight;
 
     /**
      * @var string
@@ -54,7 +68,7 @@ class Characters
     private $level;
 
     /**
-     * @var integer
+     * @var float
      *
      * @ORM\Column(name="health", type="float")
      */
@@ -123,7 +137,7 @@ class Characters
      */
     public function setExperience($experience)
     {
-        $this->experience = $experience;
+        $this->experience = round($experience);
 
         // XP Change -> Calc new level
         $this->setLevel($this->getLevelForExperience($experience));
@@ -168,6 +182,30 @@ class Characters
     }
 
     /**
+     * Set fight
+     *
+     * @param integer $fight
+     * @return Characters
+     */
+    public function setFight($fight)
+    {
+        $this->fight = $fight;
+
+        return $this;
+    }
+
+    /**
+     * Get fight
+     *
+     * @return integer 
+     */
+    public function getFight()
+    {
+        return $this->fight;
+    }
+
+
+    /**
      * Set health
      *
      * @param float $health
@@ -175,9 +213,11 @@ class Characters
      */
     public function setHealth($health)
     {
-        $this->health = $health;
+        $this->health = round($health, 2);
         if ($this->health <= 0)  {
             $this->processDeath();
+        } else if ($this->health > 100) {
+            $this->health = 100;
         }
 
         return $this;
@@ -296,6 +336,7 @@ class Characters
     public function __construct()
     {
         $this->updates = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fight = 3;
     }
 
     /**
@@ -333,42 +374,12 @@ class Characters
     }
 
     /**
-     * Process Damage Taken
-     */
-    public function processDamageTaken($damage)
-    {
-        $health = $this->getHealth();
-        $health -= $damage;
-        $this->setHealth($health);
-    }
-
-    /**
      * Process Death
      */
     public function processDeath()
     {
         $this->setHealth(100);
-        $experience = round($this->getExperience() - ($this->getExperience() * 0.1));
-        $this->setExperience($experience);
-    }
-
-    /**
-     * Get Experience Array
-     * @return integer
-    */
-    public function getLevelForExperience($experience)
-    {
-        $level = sqrt($experience+10000)-100;
-        return floor($level);
-    }
-
-    /**
-     * Get Character DPS
-     * @return integer
-    */
-    public function getDPS()
-    {
-        $dps = $this->getPower() * $this->getAttackSpeed();
-        return $dps;
+        $experience = ($this->getExperienceForLevel($this->level+1) - $this->getExperienceForLevel($this->level))*0.3;
+        $this->processExperienceLost($experience);
     }    
 }

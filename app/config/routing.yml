@@ -4,7 +4,7 @@ nexus_admin:
 
 nexus_core:
     resource: "@NexusCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   / 
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'

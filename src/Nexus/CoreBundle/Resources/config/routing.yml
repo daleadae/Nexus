@@ -1,3 +1,9 @@
 nexus_core_homepage:
     pattern:  /
     defaults: { _controller: NexusCoreBundle:Core:index }
+
+nexus_api_fight:
+    pattern:  /api/fight
+    defaults: { _controller: NexusCoreBundle:API:fight, _format: json }
+    options:
+        expose: true

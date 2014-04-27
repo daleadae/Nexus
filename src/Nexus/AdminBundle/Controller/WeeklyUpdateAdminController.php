@@ -85,6 +85,7 @@ class WeeklyUpdateAdminController extends Controller
 
                         $character->processDamageTaken($damageTaken);
                         $character->setAttackSpeed((float)$update->as);
+                        $character->setFight(3);
                         $power = 1 + ($character->getLevel() - 1)/10;
                         $character->setPower($power);
                         $character->addUpdate($weeklyUpdate);

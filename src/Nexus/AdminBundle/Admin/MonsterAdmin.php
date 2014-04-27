@@ -53,7 +53,7 @@ class MonsterAdmin extends Admin
                 ))
             ->add('avatar', null, array(
                     'label'                 => 'admin.monster.avatar',
-                    'template'              => 'NexusAdminBundle:CharacterAdmin:list.html.twig',
+                    'template'              => 'NexusAdminBundle:MonsterAdmin:list.html.twig',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))   
         ;

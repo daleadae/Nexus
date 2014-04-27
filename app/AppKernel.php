@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
 
             // BOOSTRAP 3 INTEGRATION
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),            

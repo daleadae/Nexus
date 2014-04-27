@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "19c7745e8a9956f8b9ef28389d383837",
+    "hash": "a8ae7bb9e50224daaf341c26e5144308",
     "packages": [
         {
             "name": "craue/formflow-bundle",
@@ -1418,17 +1418,17 @@
         },
         {
             "name": "jms/serializer-bundle",
-            "version": "0.13.0",
+            "version": "dev-master",
             "target-dir": "JMS/SerializerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "bb15db3e661168f4310fad48b86915ff1ca33795"
+                "reference": "ca66cd3ace6bea5367838c6dfb00a6a0bacb8a79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/bb15db3e661168f4310fad48b86915ff1ca33795",
-                "reference": "bb15db3e661168f4310fad48b86915ff1ca33795",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/ca66cd3ace6bea5367838c6dfb00a6a0bacb8a79",
+                "reference": "ca66cd3ace6bea5367838c6dfb00a6a0bacb8a79",
                 "shasum": ""
             },
             "require": {
@@ -1471,7 +1471,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1484,7 +1484,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-12-05 14:36:11"
+            "time": "2014-02-09 12:04:09"
         },
         {
             "name": "jms/translation-bundle",
@@ -1746,12 +1746,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
-                "reference": "7ea961c9ef60343a359f513c9fec7fd3bb65ddcb"
+                "reference": "55d38f204b8c994ddf7e9aa3207c23d2b7ff429b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/7ea961c9ef60343a359f513c9fec7fd3bb65ddcb",
-                "reference": "7ea961c9ef60343a359f513c9fec7fd3bb65ddcb",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/55d38f204b8c994ddf7e9aa3207c23d2b7ff429b",
+                "reference": "55d38f204b8c994ddf7e9aa3207c23d2b7ff429b",
                 "shasum": ""
             },
             "require": {
@@ -1796,7 +1796,7 @@
                 "pagination",
                 "paginator"
             ],
-            "time": "2014-03-04 08:53:05"
+            "time": "2014-04-26 09:18:07"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2601,12 +2601,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "647ae4040823ddf062a70ff274da9e598c43b053"
+                "reference": "25abd44cb777da84960a41361a011b02a77d3946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/647ae4040823ddf062a70ff274da9e598c43b053",
-                "reference": "647ae4040823ddf062a70ff274da9e598c43b053",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/25abd44cb777da84960a41361a011b02a77d3946",
+                "reference": "25abd44cb777da84960a41361a011b02a77d3946",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2657,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2014-04-24 08:39:21"
+            "time": "2014-04-25 16:15:20"
         },
         {
             "name": "sonata-project/cache",
@@ -3118,12 +3118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "f1413259849c5e0bde371cafb5f8df2b3981800f"
+                "reference": "af77840d693aedde5176b359863e891d9fb79f18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/f1413259849c5e0bde371cafb5f8df2b3981800f",
-                "reference": "f1413259849c5e0bde371cafb5f8df2b3981800f",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/af77840d693aedde5176b359863e891d9fb79f18",
+                "reference": "af77840d693aedde5176b359863e891d9fb79f18",
                 "shasum": ""
             },
             "require": {
@@ -3181,7 +3181,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2014-04-22 10:45:09"
+            "time": "2014-04-25 07:41:35"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3824,6 +3824,7 @@
         "jms/translation-bundle": 20,
         "jms/di-extra-bundle": 20,
         "jms/i18n-routing-bundle": 20,
+        "jms/serializer-bundle": 20,
         "mopa/bootstrap-bundle": 10,
         "knplabs/knp-paginator-bundle": 20,
         "knplabs/knp-menu": 20,

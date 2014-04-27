@@ -1,66 +1,238 @@
 {% extends "NexusCoreBundle::layout.html.twig" %}
 
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets filter='cssrewrite, ?yui_css' output='css/minify/*.css'
+    '@NexusCoreBundle/Resources/public/css/index.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block content %}
 <div class="row text-center">
 	<h1>Welcome {{ user.username }} !</h1>
 </div>
 <div class="row" style="margin-top: 20px;">
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title"><strong>Character sheet</strong></h3></div>
-            <div class="panel-body">
-            	<div class="html-table">
-            		<div class="html-row">
-            			<div class="html-cell">
-            				Name: {{ user.username }} <br/>
-            				Level: {{ user.character.level }}<br/>
-            				Experience: {{ user.character.experience }}<br/>
-            				<br/>
-            				Health: {{ user.character.health }}<br/>
-            				Attack speed: {{ user.character.attackSpeed }}<br/>
-            				Power: {{ user.character.power }}<br/>
-            				DPS: {{ user.character.dps }}
-            			</div>
-            			<div class="html-cell">
-            			</div>
-            		</div>
-            	</div>
+    <div class="col-sm-12 col-md-8">
+        <div class="row">
+            <div class="col-sm-6 col-md-6">    
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title"><strong>Character sheet</strong></h3></div>
+                    <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <p><img src="{{ asset('images/NexusCharacter/'~user.character.avatar) }}" class="img-responsive img-avatar" /></p>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <p class="character-name">{{ user.username }}</p>
+                                    <p class="character-level">Level {{ user.character.level }}</p>
+                                </div>
+                                <div class="col-xs-4">
+                                    <p><img src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="Power" title="Power" class="img-power img-char-sheet" /> {{ user.character.power|round(2) }}</p>
+                                    <p><img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="Attack Speed" title="Attack Speed" class="img-attack-speed img-char-sheet" /> {{ user.character.attackSpeed|round(2) }}</p>                            
+                                    <p><img src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS" title="DPS" class="img-dps img-char-sheet" /> {{ user.character.dps|round(2) }}</p>
+                                </div>                                                
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 txt-center">
+                                    <img src="{{ asset('bundles/nexuscore/images/health.png') }}" class="img-health img-char-sheet" />
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-danger" id="player-progress-hp" role="progressbar" aria-valuenow="{{ user.character.health }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.character.health }}%; color: black;">
+                                        <span class="progress-wrapper">
+                                            <span class="player-hp-current">{{ user.character.health }}</span> / <span class="player-hp-total">100</span>
+                                        </span>                             
+                                      </div>
+                                    </div>
+                                    <img src="{{ asset('bundles/nexuscore/images/xp.png') }}" class="img-xp img-char-sheet" />                      
+                                    <div class="progress progress-last">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="{{ user.character.percentlevel }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.character.percentlevel }}%;">
+                                            <span class="progress-wrapper">{{  user.character.experience - user.character.experienceforlevel(user.character.level) }} / {{ user.character.getExperienceForLevel(user.character.level+1)-user.character.experienceforlevel(user.character.level) }} </span>                              
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title"><strong>Fight (<span class="player-fight-number">{{ user.character.fight }})</span></strong></h3></div>
+                    <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <p><img src="{{ asset('images/NexusMonster/nodirector.jpg') }}" class="img-responsive img-monster-avatar" /></p>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <p class="monster-name">????</p>
+                                    <p class="monster-level">Level ??</p>
+                                    <p class="monster-type">Level ??</p>
+                                </div>
+                                <div class="col-xs-4">
+                                    <p>
+                                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="Power" title="Power" class="img-power img-char-sheet" />
+                                        <span class="monster-power">??</span>
+                                    </p>
+                                    <p>
+                                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="Attack Speed" title="Attack Speed" class="img-attack-speed img-char-sheet" /> 
+                                        <span class="monster-attack-speed">??</span>
+                                    </p>                            
+                                    <p>
+                                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS" title="DPS" class="img-dps img-char-sheet" />
+                                        <span class="monster-dps">??</span>
+                                    </p>
+                                </div>                                                
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 txt-center">
+                                    <img src="{{ asset('bundles/nexuscore/images/health.png') }}" class="img-health img-char-sheet" />
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-danger" id="monster-progress-hp" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; color: black;">
+                                        <span class="progress-wrapper">
+                                            <span class="monster-hp-current">??</span> / <span class="monster-hp-total">??</span>
+                                        </span>                           
+                                      </div>
+                                    </div>
+                                    <img src="{{ asset('bundles/nexuscore/images/xp.png') }}" class="img-xp img-char-sheet" />                      
+                                    <span class="monster-xp">??</span> xp
+                                </div>
+                            </div>            
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title"><strong>Fight</strong></h3></div>
-            <div class="panel-body">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 text-center">
+                <button autocomplete = "off" type="button" class="btn btn-default btn-lg" id="fight-monster" data-loading-text="Fighting..." {% if user.character.fight <= 0 %}disabled{% endif %}>
+                    <i class="fa fa-bolt"></i> &nbsp;Fight
+                </button>
             </div>
         </div>
+
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-6 col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading"><h3 class="panel-title"><strong>Leaderboard</strong></h3></div>
             <div class="panel-body">
-				<table class="table table-striped table-hover table-responsive">
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Username</th>
-							<th>Level</th>
-							<th>Experience</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for character in leaderboard %}
-							<tr>
-								<td>{{ loop.index }}.</td>
-								<td>{{ character.user.username }}</td>
-								<td>{{ character.level }}</td>
-								<td>{{ character.experience }}</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
+                <div class="table-responsive">
+    				<table class="table table-striped table-hover">
+    					<thead>
+    						<tr>
+    							<th>#</th>
+    							<th>Username</th>
+    							<th>Level</th>
+    							<th>Experience</th>
+    						</tr>
+    					</thead>
+    					<tbody>
+    						{% for character in leaderboard %}
+    							<tr>
+    								<td>{{ loop.index }}.</td>
+    								<td>{{ character.user.username }}</td>
+    								<td>{{ character.level }}</td>
+    								<td>{{ character.experience }}</td>
+    							</tr>
+    						{% endfor %}
+    					</tbody>
+    				</table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        var TWIG = {};
+        TWIG.icon_monster_path   = "{{ asset('images/NexusMonster/%icon%')}}";
+    </script>
+    <script type="text/javascript">
+        var fight;
+        $('#fight-monster').on('click', function() {
+            $(this).button('loading');
+            $.getJSON(Routing.generate('nexus_api_fight'), function( data ) {
+                if (data.status == "success") {
+                    fight = new FightManager(data.character, data.monster, data.fight);
+                    fight.setupMob();
+                    fight.launchFight();
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        function FightManager(player, monster, fight) {
+            this.player = player;
+            this.mob = monster;
+            this.fight = fight
+            this.iterator = 0;
+            this.launchFight;
+        }
+
+        FightManager.prototype.setupMob = function() {
+            $('.monster-name').html(this.mob.name);
+            $('.monster-level').html(this.mob.level);
+            $('.monster-xp').html(this.mob.experience);
+            $('.monster-power').html(this.mob.power);
+            $('.monster-attack-speed').html(this.mob.attack_speed);
+            $('.monster-dps').html(this.getDPS(this.mob));
+            if (this.mob.type == 1) {
+                $('.monster-type').html('Normal');
+                $('.monster-hp-current, .monster-hp-total').html('50');
+            } else if (this.mob.type == 2) {
+                $('.monster-type').html('Elite');
+                $('.monster-hp-current, .monster-hp-total').html('75'); 
+            }
+            $('.img-monster-avatar').attr('src', TWIG.icon_monster_path.replace('%icon%', this.mob.avatar));            
+        }
+
+        FightManager.prototype.getDPS = function(unit) {
+            var dps = unit.power*unit.attack_speed;
+            dps = Math.round(dps*100)/100
+            return dps;
+        }
+
+        FightManager.prototype.getPercentHP = function(hp, total) {
+            var percentHP = (100*hp)/total;
+            return percentHP;
+        }        
+
+        FightManager.prototype.launchFight = function() {
+            console.log('Fight Launched');
+            this.launchFight = setInterval(function() { fight.processFight() }, 1000);
+        }
+
+        FightManager.prototype.processFight = function() {
+              var value = this.fight[this.iterator];
+              $('.monster-hp-current').html(value.monster);
+              var monster_max = $('.monster-hp-total').html();
+              $('#monster-progress-hp').css('width', this.getPercentHP(value.monster, monster_max)+'%');
+              $('.player-hp-current').html(value.player);
+              var player_max = $('.player-hp-total').html();
+              $('#player-progress-hp').css('width', this.getPercentHP(value.player, player_max)+'%');
+              this.iterator++;
+              console.log('Fight step done!');
+              if(typeof this.fight[this.iterator] == 'undefined') {
+                console.log('Fight over!');
+                window.clearInterval(this.launchFight)
+                this.processFightEnd();
+              }
+        }
+
+        FightManager.prototype.processFightEnd = function() {
+            $('.player-fight-number').html($('.player-fight-number').html()-1)
+            $('#fight-monster').button('reset');
+            if ($('.player-fight-number').html() <= 0) {
+                $('#fight-monster').attr('disabled', 'disabled');
+            }
+
+        }
+
+    </script>
 {% endblock %}

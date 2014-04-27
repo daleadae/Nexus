@@ -2,6 +2,9 @@ parameters:
 #    nexus_core.example.class: Nexus\CoreBundle\Example
 
 services:
+    nexus_core.fight_manager:
+        class: Nexus\CoreBundle\Services\FightManager
+        arguments: [@doctrine.orm.entity_manager]
 #    nexus_core.example:
 #        class: %nexus_core.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
