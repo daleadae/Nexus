@@ -163,6 +163,10 @@ class Characters extends BaseUnit
      */
     public function setLevel($level)
     {
+        if ($level > $this->level) {
+            $this->setHealth(100);
+        }
+
         $this->level = $level;
 
         $power = 1+($level-1)/10;

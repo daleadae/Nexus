@@ -62,7 +62,7 @@ class UnitModel
      */
     public function getLevelForExperience($experience)
     {
-        $level = sqrt($experience+10000)-100;
+        $level = sqrt($experience+10000)-99;
         return floor($level);
     }
 
@@ -72,7 +72,7 @@ class UnitModel
      */
     public function getExperienceForLevel($level)
     {
-        $experience =  pow($level, 2) + 200*$level;
+        $experience =  pow($level-1, 2) + 200*($level-1);
         return $experience;
     }
 
