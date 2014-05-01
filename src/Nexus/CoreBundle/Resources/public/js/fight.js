@@ -5,7 +5,7 @@ $('#fight-monster').on('click', function() {
     $('#fight-result').hide().removeClass();
     $.getJSON(Routing.generate('nexus_api_fight'), function( data ) {
         if (data.status == "success") {
-            fight = new FightManager(data.character, data.monster, data.fight, data.info);
+            fight = new FightManager(data.character, data.monster, data.fight, data.info, data);
             fight.setupMob();
             fight.launchFight();
         } else if (data.status == "error") {
@@ -16,12 +16,13 @@ $('#fight-monster').on('click', function() {
     });
 });
 
-function FightManager(character, monster, fight, status) {
+function FightManager(character, monster, fight, status, data) {
     this.character = character;
     this.mob = monster;
     this.fight = fight
     this.iterator = 0;
     this.status = status;
+    this.data = data;
     this.launchFight;
 }
   
@@ -43,7 +44,6 @@ FightManager.prototype.setupMob = function() {
 }
 
 FightManager.prototype.setupPlayer = function() {
-    console.log('Update Player');
     $('.character-level').html(this.character.level);
     $('.character-dps').html(this.getDPS(this.character));
     $('.character-power').html(this.character.power);
@@ -84,7 +84,6 @@ FightManager.prototype.processFight = function() {
       }
 
       if(typeof this.fight[this.iterator] == 'undefined') {
-        console.log('fightEnd Process GO');
         window.clearInterval(this.launchFight)
         this.processFightEnd();
       }
@@ -98,7 +97,6 @@ FightManager.prototype.damageTaken = function(elem, dps) {
 }
 
 FightManager.prototype.processFightEnd = function() {
-    console.log('Lets update the player');
     this.setupPlayer();
     $('.character-fight-number').html(this.character.fight)
     $('#fight-monster').button('reset');
@@ -107,4 +105,7 @@ FightManager.prototype.processFightEnd = function() {
     }
 
     $("#fight-result").removeClass().addClass('alert alert-'+this.status.type).html(this.status.message).fadeIn(1000);
+
+    $('#leaderboard').html(this.data.leaderboard_HTML);
+    $('#event-log').html(this.data.eventLog_HTML);
 }
