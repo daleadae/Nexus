@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title"><strong>Character sheet</strong></h3></div>
+    <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-4 character-avatar">
+                    <div id="character-damage" class="damage-taken" style="display: none;"></div>
+                    <img src="{{ asset('images/NexusCharacter/'~user.character.avatar) }}" class="img-responsive img-avatar" />
+                </div>
+                <div class="col-xs-4 text-center">
+                    <p class="character-name">{{ user.username }}</p>
+                    <p>Level <span class="character-level">{{ user.character.level }}</span></p>
+                </div>
+                <div class="col-xs-4">
+                    <p>
+                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="Power" title="Power" class="img-power img-char-sheet" /> 
+                        <span class="character-power">{{ user.character.power }}</span>
+                    </p>
+                    <p>
+                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="Attack Speed" title="Attack Speed" class="img-attack-speed img-char-sheet" /> 
+                        <span class="character-attack-speed">{{ user.character.attackSpeed }}
+                    </p>                            
+                    <p>
+                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS" title="DPS" class="img-dps img-char-sheet" />
+                        <span class="character-dps">{{ user.character.dps }}</span>
+                    </p>
+                </div>                                                
+            </div>
+            <div class="row">
+                <div class="col-xs-12 txt-center">
+                    <img src="{{ asset('bundles/nexuscore/images/health.png') }}" class="img-health img-char-sheet" />
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" id="character-progress-hp" role="progressbar" aria-valuenow="{{ user.character.health }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.character.health }}%; color: black;">
+                        <span class="progress-wrapper">
+                            <span class="character-hp-current">{{ user.character.health }}</span> / <span class="character-hp-total">100</span>
+                        </span>                             
+                      </div>
+                    </div>
+                    <img src="{{ asset('bundles/nexuscore/images/xp.png') }}" class="img-xp img-char-sheet" />                      
+                    <div class="progress progress-last">
+                      <div class="progress-bar" role="progressbar" id="character-progress-xp" aria-valuenow="{{ user.character.percentlevel }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.character.percentlevel }}%;">
+                            <span class="progress-wrapper">
+                                <span class="character-xp-current">{{ user.character.getExperienceShort }}</span> / <span class="character-xp-total">{{ user.character.getExperienceShortMax }}</span>
+                            </span>                              
+                      </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

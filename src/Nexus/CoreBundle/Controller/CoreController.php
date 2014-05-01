@@ -9,12 +9,11 @@ class CoreController extends Controller
     public function indexAction()
     {
     	$char_rep = $this->getDoctrine()->getRepository('NexusCoreBundle:Characters');
-    	$user = $this->get('security.context')->getToken()->getUser();
-    	$leaderboard = $char_rep->getLeaderBoard();
-    	//var_dump($user->getCharacter()->getPower());
+        $fightLog = $this->container->get('nexus_core.fight_logger');
         return $this->render('NexusCoreBundle:Core:index.html.twig', array(
-        				'user' 			=> $user,
-        				'leaderboard' 	=> $leaderboard
+        				'user' 			=> $this->get('security.context')->getToken()->getUser(),
+        				'leaderboard' 	=> $char_rep->getLeaderBoard(),
+                        'fightLogs'      => $fightLog->getLastLog(),
         			));
     }
 }

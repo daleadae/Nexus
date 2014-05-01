@@ -2,21 +2,22 @@ var fight;
 $('#fight-monster').on('click', function() {
     $(this).button('loading');
     $('#monster-progress-hp').css('width', '100%');
-    $('#fight-result').css('display', 'none')
+    $('#fight-result').hide().removeClass();
     $.getJSON(Routing.generate('nexus_api_fight'), function( data ) {
         if (data.status == "success") {
             fight = new FightManager(data.character, data.monster, data.fight, data.info);
             fight.setupMob();
             fight.launchFight();
-        } else {
-            $('#fight-result').addClass('alert-'+data.status);
-            $('fight-result').html(data.message);
+        } else if (data.status == "error") {
+            $('#fight-result').addClass('alert alert-danger').html(data.message);
         }
+    }).fail(function(jqXHR) {
+      window.location.reload(true);
     });
 });
 
-function FightManager(player, monster, fight, status) {
-    this.player = player;
+function FightManager(character, monster, fight, status) {
+    this.character = character;
     this.mob = monster;
     this.fight = fight
     this.iterator = 0;
@@ -35,20 +36,21 @@ FightManager.prototype.setupMob = function() {
         $('.monster-type').html('Normal');
         $('.monster-hp-current, .monster-hp-total').html('50');
     } else if (this.mob.type == 2) {
-        $('.monster-type').html('Elite');
+        $('.monster-type').html('<img src="'+TWIG.icon_elite+'" alt="Elite" title="Elite" class="img-elite img-char-sheet" />Elite');
         $('.monster-hp-current, .monster-hp-total').html('75'); 
     }
     $('.img-monster-avatar').attr('src', TWIG.icon_monster_path.replace('%icon%', this.mob.avatar));            
 }
 
 FightManager.prototype.setupPlayer = function() {
-    $('.character-level').html(this.player.level);
-    $('.character-dps').html(this.getDPS(this.player));
-    $('.character-power').html(this.player.power);
-    $('.character-attack-speed').html(this.player.attack_speed);            
-    $('#character-progress-xp').css('width', this.getPercent(this.player.experience_short, this.player.experience_short_max)+'%');
-    $('.character-xp-current').html(this.player.experience_short);
-    $('.character-xp-total').html(this.player.experience_short_max);            
+    console.log('Update Player');
+    $('.character-level').html(this.character.level);
+    $('.character-dps').html(this.getDPS(this.character));
+    $('.character-power').html(this.character.power);
+    $('.character-attack-speed').html(this.character.attack_speed);            
+    $('#character-progress-xp').css('width', this.getPercent(this.character.experience_short, this.character.experience_short_max)+'%');
+    $('.character-xp-current').html(this.character.experience_short);
+    $('.character-xp-total').html(this.character.experience_short_max);            
 }
 
 FightManager.prototype.getDPS = function(unit) {
@@ -69,21 +71,20 @@ FightManager.prototype.launchFight = function() {
 FightManager.prototype.processFight = function() {
       var value = this.fight[this.iterator];
       $('.monster-hp-current').html(value.monster);
-      var monster_max = $('.monster-hp-total').html();
-      $('#monster-progress-hp').css('width', this.getPercent(value.monster, monster_max)+'%');
-      $('.character-hp-current').html(value.player);
-      var player_max = $('.character-hp-total').html();
-      $('#character-progress-hp').css('width', this.getPercent(value.player, player_max)+'%');
+      $('#monster-progress-hp').css('width', this.getPercent(value.monster, $('.monster-hp-total').html())+'%');
+      setTimeout( function() { $('.character-hp-current').html(value.character); }, 500 );
+      setTimeout( function() { $('#character-progress-hp').css('width', fight.getPercent(value.character, $('.character-hp-total').html())+'%'); }, 500 );
       
       this.iterator++;
 
-      this.damageTaken($('#monster-damage'), this.getDPS(this.player));
+      this.damageTaken($('#monster-damage'), this.getDPS(this.character));
 
       if (value.monster > 0) {
-        this.damageTaken($('#character-damage'), this.getDPS(this.mob));
+        setTimeout( function() { fight.damageTaken($('#character-damage'), fight.getDPS(fight.mob)); }, 500);
       }
 
       if(typeof this.fight[this.iterator] == 'undefined') {
+        console.log('fightEnd Process GO');
         window.clearInterval(this.launchFight)
         this.processFightEnd();
       }
@@ -97,14 +98,13 @@ FightManager.prototype.damageTaken = function(elem, dps) {
 }
 
 FightManager.prototype.processFightEnd = function() {
+    console.log('Lets update the player');
     this.setupPlayer();
-    $('.character-fight-number').html(this.player.fight)
+    $('.character-fight-number').html(this.character.fight)
     $('#fight-monster').button('reset');
-    if (this.player.fight <= 0) {
+    if (this.character.fight <= 0) {
         $('#fight-monster').hide();
     }
 
-    $("#fight-result").removeClass()
-    $("#fight-result").addClass('alert alert-'+this.status.type);
-    $("#fight-result").html(this.status.message).fadeIn(1000);
+    $("#fight-result").removeClass().addClass('alert alert-'+this.status.type).html(this.status.message).fadeIn(1000);
 }

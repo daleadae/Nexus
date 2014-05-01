@@ -24,10 +24,6 @@ class CharacterAdmin extends Admin
                     'label'                 => 'admin.characters.username',
                     'translation_domain'    => 'SonataCustomAdmin',                  
                 ))
-            ->add('name', null, array(
-                    'label'                 => 'admin.characters.name',
-                    'translation_domain'    =>  'SonataCustomAdmin',
-                ))
             ->add('experience', null, array(
                     'label'                 => 'admin.characters.experience',
                     'translation_domain'    =>  'SonataCustomAdmin',
@@ -57,10 +53,6 @@ class CharacterAdmin extends Admin
                     'class'                 => 'Application\Sonata\UserBundle\Entity\User',
                     'label'                 => 'admin.characters.username',
                     'translation_domain'    => 'SonataCustomAdmin',    
-                ))
-            ->add('name', null, array(
-                    'label'                 => 'admin.characters.name',
-                    'translation_domain'    =>  'SonataCustomAdmin',
                 ))
             ->add('experience', null, array(
                     'label'                 => 'admin.characters.experience',
@@ -93,14 +85,10 @@ class CharacterAdmin extends Admin
                     'label'                 => 'admin.characters.username',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
-            ->add('id', null, array(
+            ->addIdentifier('id', null, array(
                     'label'                 => 'admin.characters.id',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))            
-            ->addIdentifier('name', null, array(
-                    'label'                 => 'admin.characters.name',
-                    'translation_domain'    =>  'SonataCustomAdmin',
-                ))
             ->add('experience', null, array(
                     'label'                 => 'admin.characters.experience',
                     'translation_domain'    =>  'SonataCustomAdmin',

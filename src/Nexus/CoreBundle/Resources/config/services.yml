@@ -4,6 +4,9 @@ parameters:
 services:
     nexus_core.fight_manager:
         class: Nexus\CoreBundle\Services\FightManager
+        arguments: [@doctrine.orm.entity_manager, @security.context, @nexus_core.fight_logger]
+    nexus_core.fight_logger:
+        class: Nexus\CoreBundle\Services\FightLogger
         arguments: [@doctrine.orm.entity_manager]
 #    nexus_core.example:
 #        class: %nexus_core.example.class%

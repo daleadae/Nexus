@@ -1,0 +1,21 @@
+.img-event {
+	width: 30px;
+	display: inline-block;
+}
+
+.event-dead {
+	position:absolute;
+	margin-top: 19px;
+}
+
+.event-result {
+	font-size: 12px;
+	border: 1px solid #333;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.character-avatar-event, .monster-avatar-event {
+	line-height: 60px;
+	vertical-align: middle;
+}

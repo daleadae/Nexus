@@ -1,0 +1,62 @@
+{% for fightLog in fightLogs %}    
+    <div class="row event-log">
+        <div class="col-xs-2 character-avatar-event">
+            {% if fightLog.result == false %}
+                <img src="{{ asset('bundles/nexuscore/images/dead.png') }}" class="img-responsive img-event img-event-dead" />
+            {% endif %}
+            <img src="{{ asset('images/NexusCharacter/'~fightLog.character.avatar) }}" class="img-responsive img-event" />
+        </div>
+        <div class="col-xs-8 text-center">
+            <p class="event-result alert alert-{% if fightLog.result == true %}success{% else %}danger{% endif %}">
+                <span class="event-time" style="">{{ fightLog.get_time_difference_php(fightLog.date.date) }}</span>
+                {% if fightLog.result == true %}
+                    <span class="text-left center-block">
+                        {{ fightLog.character.user.username }}
+                    </span>
+                    <span class="text-right center-block">
+                        {{ fightLog.monster.name }} ({{ fightLog.monsterLevel }} {% if fightLog.monsterType == 1 %}N{% else %}E{% endif %})
+                    </span>
+                {% else %}
+                    <span class="text-right center-block">
+                        {{ fightLog.monster.name }}
+                        ({{ fightLog.monsterLevel }} {% if fightLog.monsterType == 1 %}N{% else %}E{% endif %})
+                    </span>
+                    <span class="text-left center-block">
+                        {{ fightLog.character.user.username }}
+                    </span>
+                {% endif %}
+            </p>
+        </div>
+        <div class="col-xs-2 monster-avatar-event">
+            {% if fightLog.result == true %}
+                <img src="{{ asset('bundles/nexuscore/images/dead.png') }}" class="img-responsive img-event img-event-dead" />
+            {% endif %}                       
+            <img src="{{ asset('images/NexusMonster/'~fightLog.monster.avatar) }}" class="img-responsive img-event" />
+        </div>
+    </div>
+    {% if fightLog.characterLevel != fightLog.characterLevelFinal %}
+    <div class="row event-log">
+        <div class="col-xs-2 character-avatar-event">
+            <img src="{{ asset('images/NexusCharacter/'~fightLog.character.avatar) }}" class="img-responsive img-event" />
+        </div>
+        <div class="col-xs-8 text-center">
+            <p class="event-result alert alert-{% if fightLog.characterLevel > fightLog.characterLevelFinal %}warning{% else %}info{% endif %}">
+                <span class="event-time" style="">{{ fightLog.get_time_difference_php(fightLog.date.date) }}</span>
+                <span class="text-left center-block">
+                    {{ fightLog.character.user.username }}
+                </span>
+                <span class="text-right center-block">
+                    {{ fightLog.characterLevelFinal }}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-2 monster-avatar-event"> 
+            {% if fightLog.characterLevel > fightLog.characterLevelFinal %}
+                <img src="{{ asset('bundles/nexuscore/images/level-down.png') }}" class="img-responsive img-event-level center-block" />
+            {% else %}               
+                <img src="{{ asset('bundles/nexuscore/images/level-up.png') }}" class="img-responsive img-event-level center-block" />
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}            
+{% endfor %}

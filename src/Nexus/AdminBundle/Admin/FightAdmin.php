@@ -13,9 +13,9 @@ class FightAdmin extends Admin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        /*$collection->remove('delete');
+        $collection->remove('delete');
         $collection->remove('edit');
-        $collection->remove('create');*/
+        $collection->remove('create');
     }
 
     // Fields to be shown on create/edit forms

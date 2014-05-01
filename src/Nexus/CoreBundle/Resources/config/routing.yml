@@ -7,3 +7,15 @@ nexus_api_fight:
     defaults: { _controller: NexusCoreBundle:API:fight }
     options:
         expose: true
+
+nexus_api_event_log:
+    pattern:  /api/event
+    defaults: { _controller: NexusCoreBundle:API:event }
+    options:
+        expose: true
+
+nexus_api_leaderboard:
+    pattern:  /api/leaderboard
+    defaults: { _controller: NexusCoreBundle:API:leaderboard }
+    options:
+        expose: true

@@ -1,7 +1,16 @@
+/* Image Avatar of Character & Monster */
 .img-avatar, .img-monster-avatar {
 	width: 80px;
 }
 
+
+/* Image of Health & Xp before progress bar */
+.img-health, .img-xp {
+	float: left;
+}
+
+
+/* Image for character & monster statistic */
 .img-char-sheet {
 	width: 20px;
 	margin-right: 5px;
@@ -11,26 +20,80 @@
 	width: 20px;
 }
 
-.img-health, .img-xp {
-	float: left;
-}
 
-.character-name {
-	font-weight: bold;
+/* Character & Monster Level */
+.character-level, .monster-level {
 	font-size: 16px;
 }
 
-.character-level {
-	font-size: 16px;
-}
 
+/* Fight Button */
 #fight-monster {
 	margin-bottom: 20px;
 }
 
+
+/* Character & Monster Name */
+.character-name, .monster-name {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* Character & Monster Damage Taken */
 .damage-taken {
 	color: red;
 	font-weight: bold;
 	position: absolute;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;	
+}
+
+/* Image for Event Log */
+.img-event {
+	width: 50px;
+	display: inline-block;
+}
+
+/* Image Event Dead */
+.img-event-dead {
+	position:absolute;
+	margin-top: 15px;
+	width: 34px;
+	margin-left: 8px;
+}
+
+/* Box event result */
+.event-result {
+	font-size: 12px;
+	border: 1px solid #333;
+	padding: 20px 10px 10px;
+	margin-bottom: 10px;
+}
+
+
+/* Avatar of Event log */
+.character-avatar-event, .monster-avatar-event {
+	line-height: 60px;
+	vertical-align: middle;
+}
+
+/* Container of All Event log */
+.event-log div {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* Level up Event Image */
+.img-event-level {
+	width: 32px;
+	margin-top: 14px;
+}
+
+/* Event Time */
+.event-time {
+	font-size: 10px;
+	width: 100%; 
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin-top: 2px;
 }

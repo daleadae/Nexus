@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title"><strong>Fight (<span class="character-fight-number">{{ user.character.fight }}</span>)</strong></h3></div>
+    <div class="panel-body">
+            <div class="row"> 
+                <div class="col-xs-4 monster-avatar">
+                    <div id="monster-damage" class="damage-taken" style="display: none;"></div>
+                    <img src="{{ asset('images/NexusMonster/nodirector.jpg') }}" class="img-responsive img-monster-avatar" />
+                </div>
+                <div class="col-xs-4 text-center">
+                    <p class="monster-name">????</p>
+                    <p>Level <span class="monster-level">??</span></p>
+                    <p class="monster-type">???</p>
+                </div>
+                <div class="col-xs-4">
+                    <p>
+                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="Power" title="Power" class="img-power img-char-sheet" />
+                        <span class="monster-power">??</span>
+                    </p>
+                    <p>
+                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="Attack Speed" title="Attack Speed" class="img-attack-speed img-char-sheet" /> 
+                        <span class="monster-attack-speed">??</span>
+                    </p>                            
+                    <p>
+                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS" title="DPS" class="img-dps img-char-sheet" />
+                        <span class="monster-dps">??</span>
+                    </p>
+                </div>                                                
+            </div>
+            <div class="row">
+                <div class="col-xs-12 txt-center">
+                    <img src="{{ asset('bundles/nexuscore/images/health.png') }}" class="img-health img-char-sheet" />
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" id="monster-progress-hp" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; color: black;">
+                        <span class="progress-wrapper">
+                            <span class="monster-hp-current">??</span> / <span class="monster-hp-total">??</span>
+                        </span>                           
+                      </div>
+                    </div>
+                    <img src="{{ asset('bundles/nexuscore/images/xp.png') }}" class="img-xp img-char-sheet" />                      
+                    <span class="monster-xp">??</span> xp
+                </div>
+            </div>            
+    </div>
+</div>
