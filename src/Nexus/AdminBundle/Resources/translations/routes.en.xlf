@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2014-04-24T22:57:40Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2014-05-05T10:56:40Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -63,32 +63,48 @@
         <target>/admin/nexus/core/experiencechart/{id}/show</target>
       </trans-unit>
       <trans-unit id="38a13d34dce14334e7c8c1305486d8fad32fbb3a" resname="admin_nexus_core_fight_batch">
-        <source>/admin/nexus/core/fight/batch</source>
+        <source>admin_nexus_core_fight_batch</source>
         <target>/admin/nexus/core/fight/batch</target>
       </trans-unit>
       <trans-unit id="ef834c047ddd12c79d28c46a140b6e15f51e11d1" resname="admin_nexus_core_fight_create">
-        <source>/admin/nexus/core/fight/create</source>
+        <source>admin_nexus_core_fight_create</source>
         <target>/admin/nexus/core/fight/create</target>
       </trans-unit>
       <trans-unit id="740b70c1391f7f0b8f8165116dbcf1dc7eff20d3" resname="admin_nexus_core_fight_delete">
-        <source>/admin/nexus/core/fight/{id}/delete</source>
+        <source>admin_nexus_core_fight_delete</source>
         <target>/admin/nexus/core/fight/{id}/delete</target>
       </trans-unit>
       <trans-unit id="71df330a2bed8d8afb30a3dddf88fb833e43baa3" resname="admin_nexus_core_fight_edit">
-        <source>/admin/nexus/core/fight/{id}/edit</source>
+        <source>admin_nexus_core_fight_edit</source>
         <target>/admin/nexus/core/fight/{id}/edit</target>
       </trans-unit>
       <trans-unit id="9fd448006eb00594a96eb52db23bd3a28b0423fa" resname="admin_nexus_core_fight_export">
-        <source>/admin/nexus/core/fight/export</source>
+        <source>admin_nexus_core_fight_export</source>
         <target>/admin/nexus/core/fight/export</target>
       </trans-unit>
       <trans-unit id="971eaa5640d1ad7ce93d36515521f506e2ed8732" resname="admin_nexus_core_fight_list">
-        <source>/admin/nexus/core/fight/list</source>
+        <source>admin_nexus_core_fight_list</source>
         <target>/admin/nexus/core/fight/list</target>
       </trans-unit>
       <trans-unit id="7016cbeda537ecc35c0a99847305d581fecd4a4b" resname="admin_nexus_core_fight_show">
-        <source>/admin/nexus/core/fight/{id}/show</source>
+        <source>admin_nexus_core_fight_show</source>
         <target>/admin/nexus/core/fight/{id}/show</target>
+      </trans-unit>
+      <trans-unit id="7d4d5515b1c52fec90df2322ca357714e768e91c" resname="admin_nexus_core_fightlog_batch">
+        <source>/admin/nexus/core/fightlog/batch</source>
+        <target state="new">/admin/nexus/core/fightlog/batch</target>
+      </trans-unit>
+      <trans-unit id="66a15d06ab884b82ac29dfff0990880ed2e4c0dc" resname="admin_nexus_core_fightlog_export">
+        <source>/admin/nexus/core/fightlog/export</source>
+        <target state="new">/admin/nexus/core/fightlog/export</target>
+      </trans-unit>
+      <trans-unit id="ec809af95d0dc4c4bf027b2222264a821fc7f7d0" resname="admin_nexus_core_fightlog_list">
+        <source>/admin/nexus/core/fightlog/list</source>
+        <target state="new">/admin/nexus/core/fightlog/list</target>
+      </trans-unit>
+      <trans-unit id="f3c1f83f81cfe067a3e15b407aee41e70d7884be" resname="admin_nexus_core_fightlog_show">
+        <source>/admin/nexus/core/fightlog/{id}/show</source>
+        <target state="new">/admin/nexus/core/fightlog/{id}/show</target>
       </trans-unit>
       <trans-unit id="6af4ec55e04bd7942f74c6ef9b36441c1eae9a45" resname="admin_nexus_core_monster_batch">
         <source>/admin/nexus/core/monster/batch</source>
@@ -199,19 +215,19 @@
         <target>/js/routing.{_format}</target>
       </trans-unit>
       <trans-unit id="3e7a1eb65964daab6c8503cea70e628e3f933ce0" resname="fos_user_change_password">
-        <source>/profile/change-password</source>
+        <source>fos_user_change_password</source>
         <target>/profile/change-password</target>
       </trans-unit>
       <trans-unit id="89d9f90f552727a161575b47336d827555229023" resname="fos_user_profile_edit">
-        <source>/profile/edit-profile</source>
+        <source>fos_user_profile_edit</source>
         <target>/profile/edit-profile</target>
       </trans-unit>
       <trans-unit id="4902df0628432880f048c45009dc1d3df6800747" resname="fos_user_profile_edit_authentication">
-        <source>/profile/edit-authentication</source>
+        <source>fos_user_profile_edit_authentication</source>
         <target>/profile/edit-authentication</target>
       </trans-unit>
       <trans-unit id="a5c247e0ed2953f5e091126240a417a30fe47c12" resname="fos_user_profile_show">
-        <source>/profile/</source>
+        <source>fos_user_profile_show</source>
         <target>/profile/</target>
       </trans-unit>
       <trans-unit id="a7796b4f4f42c56769357a8303569fc003731e87" resname="fos_user_registration_check_email">
@@ -259,15 +275,27 @@
         <target>/logout</target>
       </trans-unit>
       <trans-unit id="bfcc246d9eb6582f8f4a521ee69160ca59a74a01" resname="nexus_admin_homepage">
-        <source>/hello/{name}</source>
+        <source>nexus_admin_homepage</source>
         <target>/hello/{name}</target>
+      </trans-unit>
+      <trans-unit id="5802ab5476be115faa57d05fd52df083d2d7eb91" resname="nexus_api_event_log">
+        <source>/api/event</source>
+        <target state="new">/api/event</target>
+      </trans-unit>
+      <trans-unit id="d8d2ddadf5b4805f413454b1005390a04de32a2f" resname="nexus_api_fight">
+        <source>/api/fight</source>
+        <target state="new">/api/fight</target>
+      </trans-unit>
+      <trans-unit id="698361b111a991c38a02fa7479ca3be692f6653f" resname="nexus_api_leaderboard">
+        <source>/api/leaderboard</source>
+        <target state="new">/api/leaderboard</target>
       </trans-unit>
       <trans-unit id="43f07689cdb0938a26df1cf4a803d8989dd2a945" resname="nexus_core_homepage">
         <source>/</source>
         <target>/</target>
       </trans-unit>
       <trans-unit id="e4684a2846013766875f48b816e44f4794a7346b" resname="nexus_core_toto">
-        <source>/tata</source>
+        <source>nexus_core_toto</source>
         <target>/tata</target>
       </trans-unit>
       <trans-unit id="04a323eaf4b555f3ca15619a7d4d2b2eeb9527af" resname="sonata_admin_append_form_element">
@@ -311,19 +339,19 @@
         <target>/admin/logout</target>
       </trans-unit>
       <trans-unit id="d811f219ce537f94e7fa69f722242d3c9cdf5ae4" resname="sonata_user_change_password">
-        <source>/profile/change-password</source>
+        <source>sonata_user_change_password</source>
         <target>/profile/change-password</target>
       </trans-unit>
       <trans-unit id="dcca96d13aa0d4970f4d037665a409a607734840" resname="sonata_user_profile_edit">
-        <source>/profile/edit-profile</source>
+        <source>sonata_user_profile_edit</source>
         <target>/profile/edit-profile</target>
       </trans-unit>
       <trans-unit id="7a45809f45fb97c0099f36775c6c35398c9f83e6" resname="sonata_user_profile_edit_authentication">
-        <source>/profile/edit-authentication</source>
+        <source>sonata_user_profile_edit_authentication</source>
         <target>/profile/edit-authentication</target>
       </trans-unit>
       <trans-unit id="1e50112ed7b19abab8ccf2ce0fde046a059b464b" resname="sonata_user_profile_show">
-        <source>/profile/</source>
+        <source>sonata_user_profile_show</source>
         <target>/profile/</target>
       </trans-unit>
       <trans-unit id="580abd0520595a185512ef245920d345fe45052e" resname="sonata_user_registration_check_email">

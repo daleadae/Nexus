@@ -47,7 +47,7 @@ class WeeklyUpdateAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('character', null, array(
+            ->add('character.user', null, array(
                     'label'                 => 'admin.weekly_update.character',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))
@@ -82,7 +82,7 @@ class WeeklyUpdateAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('character', null, array(
+            ->add('character.user', null, array(
                     'label'                 => 'admin.weekly_update.character',
                     'translation_domain'    =>  'SonataCustomAdmin',
                 ))

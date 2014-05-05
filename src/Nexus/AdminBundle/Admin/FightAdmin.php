@@ -42,6 +42,10 @@ class FightAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+           ->add('character.user', null, array(
+                    'label'                 => 'admin.fight.character',
+                    'translation_domain'    =>  'SonataCustomAdmin',
+                ))
             ->add('result', null, array(
                     'label'                 => 'admin.fight.result',
                     'translation_domain'    =>  'SonataCustomAdmin',
@@ -61,6 +65,10 @@ class FightAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+           ->add('character.user', null, array(
+                    'label'                 => 'admin.fight.character',
+                    'translation_domain'    =>  'SonataCustomAdmin',
+                ))        
             ->add('result', null, array(
                     'label'                 => 'admin.fight.result',
                     'translation_domain'    =>  'SonataCustomAdmin',

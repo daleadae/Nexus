@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2014-04-24T22:57:40Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2014-05-05T10:57:54Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -9,164 +9,106 @@
       <trans-unit id="a89a3cf55367e7c1531bc93ac0ac0923b4f55030" resname="admin.characters.attack_speed">
         <source>admin.characters.attack_speed</source>
         <target>Attack Speed</target>
-        <jms:reference-file line="39">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="79">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="122">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="c076085406b11e47216034187c75c57861434b83" resname="admin.characters.avatar">
         <source>admin.characters.avatar</source>
         <target>Avatar</target>
-        <jms:reference-file line="47">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="87">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="130">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="723ad86c45d19935df4f95e658bdb898657d2a63" resname="admin.characters.experience">
         <source>admin.characters.experience</source>
         <target>Experience</target>
-        <jms:reference-file line="27">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="67">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="110">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="ed51964281ad804b87654cb27b676e83ef321495" resname="admin.characters.health">
         <source>admin.characters.health</source>
         <target>Health</target>
-        <jms:reference-file line="35">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="75">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="118">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="adb6012d21a4efbcaa17c3f05f8f3ba2aab4db6c" resname="admin.characters.id">
         <source>admin.characters.id</source>
         <target>ID</target>
-        <jms:reference-file line="102">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="360bba9f5356e851c7d80baed381fc303455818c" resname="admin.characters.level">
         <source>admin.characters.level</source>
         <target>Level</target>
-        <jms:reference-file line="31">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="71">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="114">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="e6aa570661e8507a3b4bf952a83dfde1381c12a6" resname="admin.characters.name">
         <source>admin.characters.name</source>
         <target>Name</target>
-        <jms:reference-file line="23">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="63">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="106">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="33e4dfd6e43aeb310da59e4185534616bdfcdb8e" resname="admin.characters.power">
         <source>admin.characters.power</source>
         <target>Power</target>
-        <jms:reference-file line="43">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="83">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="126">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="6b4d6b429e7133b9279a7de16462e4cf3e68be11" resname="admin.characters.username">
         <source>admin.characters.username</source>
         <target>Username</target>
-        <jms:reference-file line="19">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="59">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
-        <jms:reference-file line="98">AdminBundle/Admin/CharacterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="9e15b248bebcafc43f0be3d359372280649de2bf" resname="admin.experience.experience">
         <source>admin.experience.experience</source>
         <target>Experience</target>
-        <jms:reference-file line="22">AdminBundle/Admin/ExperienceAdmin.php</jms:reference-file>
-        <jms:reference-file line="37">AdminBundle/Admin/ExperienceAdmin.php</jms:reference-file>
-        <jms:reference-file line="52">AdminBundle/Admin/ExperienceAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="b5c0866cda6c36bf4feca474982eb7d62f9bf07e" resname="admin.experience.level">
         <source>admin.experience.level</source>
         <target>Level</target>
-        <jms:reference-file line="18">AdminBundle/Admin/ExperienceAdmin.php</jms:reference-file>
-        <jms:reference-file line="33">AdminBundle/Admin/ExperienceAdmin.php</jms:reference-file>
-        <jms:reference-file line="48">AdminBundle/Admin/ExperienceAdmin.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad4782402fa0cc195c03e8d0950c3c2e8998adbe" resname="admin.fight.character">
+        <source>admin.fight.character</source>
+        <target>Username</target>
       </trans-unit>
       <trans-unit id="4dcdd678bd59b71455c9bae6c509849823b75bee" resname="admin.fight.damage_done">
         <source>admin.fight.damage_done</source>
         <target>Damage done</target>
-        <jms:reference-file line="30">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
-        <jms:reference-file line="50">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
-        <jms:reference-file line="69">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="311f05bff0c0dd3b923e90c871e2e23e41304de2" resname="admin.fight.damage_taken">
         <source>admin.fight.damage_taken</source>
         <target>Damage taken</target>
-        <jms:reference-file line="34">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
-        <jms:reference-file line="54">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
-        <jms:reference-file line="73">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="1f73b0b3740791597cd210c1deb3dbb9dd78364c" resname="admin.fight.date">
         <source>admin.fight.date</source>
         <target>Date</target>
-        <jms:reference-file line="77">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="733e4df69e80384f228d9c8a4809c11381da6566" resname="admin.fight.result">
         <source>admin.fight.result</source>
         <target>Result</target>
-        <jms:reference-file line="26">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
-        <jms:reference-file line="46">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
-        <jms:reference-file line="65">AdminBundle/Admin/FightAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="89bbd0491bd98e1fd891ed5277c5bf4765d092c5" resname="admin.monster.avatar">
         <source>admin.monster.avatar</source>
         <target>Avatar</target>
-        <jms:reference-file line="22">AdminBundle/Admin/MonsterAdmin.php</jms:reference-file>
-        <jms:reference-file line="37">AdminBundle/Admin/MonsterAdmin.php</jms:reference-file>
-        <jms:reference-file line="52">AdminBundle/Admin/MonsterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="690f68b464402ffc4712dcfd7382499983ff8782" resname="admin.monster.name">
         <source>admin.monster.name</source>
         <target>Name</target>
-        <jms:reference-file line="18">AdminBundle/Admin/MonsterAdmin.php</jms:reference-file>
-        <jms:reference-file line="33">AdminBundle/Admin/MonsterAdmin.php</jms:reference-file>
-        <jms:reference-file line="48">AdminBundle/Admin/MonsterAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="c677d8071b2d8bedb709ab4ab10d83721594f961" resname="admin.weekly_update.armor">
         <source>admin.weekly_update.armor</source>
         <target>Armor</target>
-        <jms:reference-file line="55">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="90">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="d3bfd10476d8328b68dccdab718f6ef8b5628ef5" resname="admin.weekly_update.attack_speed">
         <source>admin.weekly_update.attack_speed</source>
         <target>Attack speed</target>
-        <jms:reference-file line="67">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="102">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="acf223b34be03dee07826425b990ff2d21fb2b9f" resname="admin.weekly_update.character">
         <source>admin.weekly_update.character</source>
         <target>Character</target>
-        <jms:reference-file line="51">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="86">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="2d5255ddcec5944ed6b06e89a6c2796bc77d16b1" resname="admin.weekly_update.date">
         <source>admin.weekly_update.date</source>
         <target>Date</target>
-        <jms:reference-file line="75">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="110">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="527174360e35be0b2e87bac89e3dd1ae77875730" resname="admin.weekly_update.file_upload">
         <source>admin.weekly_update.file_upload</source>
         <target>File (XML)</target>
-        <jms:reference-file line="25">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="f66961fd3210579e31d2ae9862e0c79bce2e11d1" resname="admin.weekly_update.health_lost">
         <source>admin.weekly_update.health_lost</source>
         <target>Health lost</target>
-        <jms:reference-file line="71">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="106">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="6b19960335670577c7d2bbaa5feb81257ad0d538" resname="admin.weekly_update.mitigation">
         <source>admin.weekly_update.mitigation</source>
         <target>Mitigation</target>
-        <jms:reference-file line="63">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="98">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="5b5b44735992313246afe32d5ff078ba9e79fe2b" resname="admin.weekly_update.resist">
         <source>admin.weekly_update.resist</source>
-        <target state="new">admin.weekly_update.resist</target>
-        <jms:reference-file line="59">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
-        <jms:reference-file line="94">AdminBundle/Admin/WeeklyUpdateAdmin.php</jms:reference-file>
+        <target>Resist</target>
       </trans-unit>
       <trans-unit id="722fbdd82b32ed65dd7d7890a50610783243ff8d" resname="breadcrumb.link_characters_list">
         <source>breadcrumb.link_characters_list</source>
