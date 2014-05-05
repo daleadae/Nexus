@@ -301,7 +301,11 @@ class Characters extends BaseUnit
 
     public function __toString()
     {
-        return ($this->getName()) ? : '-';
+        if (isset($this->getUser)) {
+            return $this->getUser()->getUsername();
+        } else {
+            return '-';
+        }
     }
       
     /**

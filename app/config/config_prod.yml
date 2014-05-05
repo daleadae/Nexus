@@ -30,9 +30,9 @@ monolog:
             handler: swift
         swift:
             type:       swift_mailer
-            from_email: 404error@lynkware.com
-            to_email:   404error@lynkware.com
-            subject:    "[Default] An Error Occurred!"
+            from_email: alogon.spam@gmail.com
+            to_email:   alogon.spam@gmail.com
+            subject:    "[Nexus] An Error Occurred!"
             level:      debug
         console:
             type:  console
