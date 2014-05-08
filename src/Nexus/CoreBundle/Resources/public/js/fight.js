@@ -1,5 +1,8 @@
 var fight;
+
 $('#fight-monster').on('click', function() {
+    eventLog.stopRefresh();
+    leaderboard.stopRefresh();
     $(this).button('loading');
     $('#monster-progress-hp').css('width', '100%');
     $('#fight-result').hide().removeClass();
@@ -13,6 +16,9 @@ $('#fight-monster').on('click', function() {
         }
     }).fail(function(jqXHR) {
       window.location.reload(true);
+    }).complete(function() {   
+      eventLog.launchRefresh();
+      leaderboard.launchRefresh();
     });
 });
 

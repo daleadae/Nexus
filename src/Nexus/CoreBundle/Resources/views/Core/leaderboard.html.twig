@@ -8,12 +8,22 @@
 		</tr>
 	</thead>
 	<tbody>
+		{% set max_xp = leaderboard[0].experience %}
 		{% for character in leaderboard %}
+			{% set character_xp =  (character.experience * 100 ) / max_xp %}
 			<tr>
 				<td>{{ loop.index }}.</td>
 				<td>{{ character.user.username }}</td>
 				<td>{{ character.level }}</td>
-				<td>{{ character.experience }}</td>
+				<td>
+                    <div class="progress progress-last">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="{{ character_xp }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ character_xp }}%;">
+                            <span class="progress-wrapper">
+                                {{ character.experience }}
+                            </span>                              
+                      </div>
+                    </div>
+				</td>
 			</tr>
 		{% endfor %}
 	</tbody>

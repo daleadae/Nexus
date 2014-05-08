@@ -1,8 +1,5 @@
-var eventLog;
-
-eventLog = new EventManager();
-
 function EventManager() {
+	this.eventInterval;
 }
 
 EventManager.prototype.refreshEventLog = function() {
@@ -13,4 +10,14 @@ EventManager.prototype.refreshEventLog = function() {
     });
 }
 
-setInterval(function () { eventLog.refreshEventLog(); }, 30000);
+EventManager.prototype.launchRefresh = function() {
+	this.eventInterval = setInterval(function () { eventLog.refreshEventLog(); }, 30000);
+}
+
+EventManager.prototype.stopRefresh = function() {
+	clearInterval(this.eventInterval);
+}
+
+var eventLog;
+eventLog = new EventManager();
+eventLog.launchRefresh();

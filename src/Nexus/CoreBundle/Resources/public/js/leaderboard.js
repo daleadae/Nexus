@@ -1,8 +1,5 @@
-var leaderboard;
-
-leaderboard = new LeaderboardManager();
-
 function LeaderboardManager() {
+	this.leaderboardInterval;
 }
 
 LeaderboardManager.prototype.refreshLeaderboard = function() {
@@ -13,4 +10,16 @@ LeaderboardManager.prototype.refreshLeaderboard = function() {
     });
 }
 
-setInterval(function () { leaderboard.refreshLeaderboard(); }, 30000);
+LeaderboardManager.prototype.launchRefresh = function() {
+	this.leaderboardInterval = setInterval(function () { leaderboard.refreshLeaderboard(); }, 30000);
+}
+
+LeaderboardManager.prototype.stopRefresh = function() {
+	clearInterval(this.leaderboardInterval);
+}
+
+var leaderboard;
+leaderboard = new LeaderboardManager();
+leaderboard.launchRefresh();
+
+

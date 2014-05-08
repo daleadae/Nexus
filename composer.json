@@ -35,7 +35,9 @@
         "sonata-project/core-bundle": "dev-master",
         "sonata-project/block-bundle": "dev-master" ,                 
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
-        "sonata-project/jquery-bundle": "1.10.*@dev",   
+        "sonata-project/datagrid-bundle": "dev-master",
+        "sonata-project/jquery-bundle": "1.10.*@dev",
+        "coresphere/console-bundle": "dev-master",        
         "friendsofsymfony/jsrouting-bundle": "@stable"
     },
     "scripts": {
