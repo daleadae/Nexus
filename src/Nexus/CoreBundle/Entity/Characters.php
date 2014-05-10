@@ -24,10 +24,16 @@ class Characters extends BaseUnit
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character", cascade={"persist", "remove"})
      * @Exclude
      */
-    private $updates;    
+    private $updates;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\FightLog", mappedBy="character", cascade={"persist", "remove"})
+     * @Exclude
+     */
+    private $fightLogs;
 
     /**
      * @var integer
@@ -314,6 +320,7 @@ class Characters extends BaseUnit
     public function __construct()
     {
         $this->updates = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fightLogs = new \Doctrine\Common\Collections\ArrayCollection();
         $this->fight = 3;
     }
 
@@ -360,4 +367,38 @@ class Characters extends BaseUnit
         $experience = ($this->getExperienceForLevel($this->level+1) - $this->getExperienceForLevel($this->level))*0.3;
         $this->processExperienceLost($experience);
     }    
+
+    /**
+     * Add fightLogs
+     *
+     * @param \Nexus\CoreBundle\Entity\FightLog $fightLogs
+     * @return Characters
+     */
+    public function addFightLog(\Nexus\CoreBundle\Entity\FightLog $fightLogs)
+    {
+        $this->fightLogs[] = $fightLogs;
+        $fightLogs->setCharacter($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove fightLogs
+     *
+     * @param \Nexus\CoreBundle\Entity\FightLog $fightLogs
+     */
+    public function removeFightLog(\Nexus\CoreBundle\Entity\FightLog $fightLogs)
+    {
+        $this->fightLogs->removeElement($fightLogs);
+    }
+
+    /**
+     * Get fightLogs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFightLogs()
+    {
+        return $this->fightLogs;
+    }
 }

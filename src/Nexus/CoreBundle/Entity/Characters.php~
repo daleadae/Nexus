@@ -2,26 +2,38 @@
 
 namespace Nexus\CoreBundle\Entity;
 
+use Nexus\CoreBundle\Models\UnitModel as BaseUnit;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Characters
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Nexus\CoreBundle\Entity\CharactersRepository")
+ * @ExclusionPolicy("none")
  */
-class Characters
+class Characters extends BaseUnit
 {
     /**
      * @ORM\OneToOne(targetEntity="Application\Sonata\UserBundle\Entity\User", inversedBy="character")
      * @ORM\JoinColumn(nullable=false)
+     * @Exclude
      */
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character")
+     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\WeeklyUpdate", mappedBy="character", cascade={"persist", "remove"})
+     * @Exclude
      */
-    private $updates;    
+    private $updates;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Nexus\CoreBundle\Entity\FightLog", mappedBy="character", cascade={"persist", "remove"})
+     * @Exclude
+     */
+    private $fightLogs;
 
     /**
      * @var integer
@@ -29,22 +41,23 @@ class Characters
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Exclude
      */
     private $id;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="fight", type="integer", options={"default" = 3})
      */
-    private $name;
+    private $fight;
 
     /**
      * @var float
      *
      * @ORM\Column(name="experience", type="float")
      */
-    private $experience;
+    private $experience; 
 
     /**
      * @var integer
@@ -54,7 +67,7 @@ class Characters
     private $level;
 
     /**
-     * @var integer
+     * @var float
      *
      * @ORM\Column(name="health", type="float")
      */
@@ -93,29 +106,6 @@ class Characters
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Characters
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set experience
      *
      * @param integer $experience
@@ -123,7 +113,10 @@ class Characters
      */
     public function setExperience($experience)
     {
-        $this->experience = $experience;
+        $this->experience = round($experience);
+
+        // XP Change -> Calc new level
+        $this->setLevel($this->getLevelForExperience($experience));      
 
         return $this;
     }
@@ -146,7 +139,14 @@ class Characters
      */
     public function setLevel($level)
     {
+        if ($level > $this->level) {
+            $this->setHealth(100);
+        }
+
         $this->level = $level;
+
+        $power = 1+($level-1)/10;
+        $this->setPower($power);
 
         return $this;
     }
@@ -162,6 +162,30 @@ class Characters
     }
 
     /**
+     * Set fight
+     *
+     * @param integer $fight
+     * @return Characters
+     */
+    public function setFight($fight)
+    {
+        $this->fight = $fight;
+
+        return $this;
+    }
+
+    /**
+     * Get fight
+     *
+     * @return integer 
+     */
+    public function getFight()
+    {
+        return $this->fight;
+    }
+
+
+    /**
      * Set health
      *
      * @param float $health
@@ -169,7 +193,12 @@ class Characters
      */
     public function setHealth($health)
     {
-        $this->health = $health;
+        $this->health = round($health, 2);
+        if ($this->health <= 0)  {
+            $this->processDeath();
+        } else if ($this->health > 100) {
+            $this->health = 100;
+        }
 
         return $this;
     }
@@ -278,6 +307,64 @@ class Characters
 
     public function __toString()
     {
-        return ($this->getName()) ? : '-';
+        if (isset($this->getUser)) {
+            return $this->getUser()->getUsername();
+        } else {
+            return '-';
+        }
+    }
+      
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->updates = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fightLogs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fight = 3;
+    }
+
+    /**
+     * Add updates
+     *
+     * @param \Nexus\CoreBundle\Entity\WeeklyUpdate $updates
+     * @return Characters
+     */
+    public function addUpdate(\Nexus\CoreBundle\Entity\WeeklyUpdate $updates)
+    {
+        $this->updates[] = $updates;
+        $updates->setCharacter($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove updates
+     *
+     * @param \Nexus\CoreBundle\Entity\WeeklyUpdate $updates
+     */
+    public function removeUpdate(\Nexus\CoreBundle\Entity\WeeklyUpdate $updates)
+    {
+        $this->updates->removeElement($updates);
+    }
+
+    /**
+     * Get updates
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUpdates()
+    {
+        return $this->updates;
+    }
+
+    /**
+     * Process Death
+     */
+    public function processDeath()
+    {
+        $this->setHealth(100);
+        $experience = ($this->getExperienceForLevel($this->level+1) - $this->getExperienceForLevel($this->level))*0.3;
+        $this->processExperienceLost($experience);
     }    
 }
