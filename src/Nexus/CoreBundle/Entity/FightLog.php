@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class FightLog
 {
     /**
-     * @ORM\ManyToOne(targetEntity="Nexus\CoreBundle\Entity\Characters")
+     * @ORM\ManyToOne(targetEntity="Nexus\CoreBundle\Entity\Characters", inversedBy="fightLogs")
      * @ORM\JoinColumn(nullable=false)
      */
     private $character;

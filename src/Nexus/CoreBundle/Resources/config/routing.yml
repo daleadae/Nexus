@@ -19,3 +19,7 @@ nexus_api_leaderboard:
     defaults: { _controller: NexusCoreBundle:API:leaderboard }
     options:
         expose: true
+        
+nexus_tutorial:
+    pattern:  /tutorial
+    defaults: { _controller: NexusCoreBundle:Tutorial:index }

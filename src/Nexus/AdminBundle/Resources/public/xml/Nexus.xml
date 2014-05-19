@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<record>
-		<char_id>2</char_id>
-		<user>Dubkowitsch, Jennifer (jdubkowitsch)</user>
-		<xp1>173.25</xp1>
-		<xp2>48.3</xp2>
-		<dmg1>44</dmg1>
-		<dmg2>19</dmg2>
-		<armor>0.80672268907563</armor>
-		<resist>0.625</resist>
-		<mitigation>0.757441959834781</mitigation>
-		<as>1.15</as>
-	</record>
-	<record>
 		<char_id>3</char_id>
 		<user>Dubowy, Rene (rdubowy)</user>
 		<xp1>130</xp1>
