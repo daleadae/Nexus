@@ -1,4 +1,6 @@
 /web/bundles/
+/web/css/minify/*
+/web/js/minify/*
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
