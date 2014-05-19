@@ -1,0 +1,171 @@
+{% extends "NexusCoreBundle::layout.html.twig" %}
+
+{%block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Nexus. <strike>Work Hard</strike>. Play Harder.</h1>
+        <div class="col-md-3">
+            <img src="{{ asset('images/NexusCharacter/G01.png')}}" class="img-responsive img-avatar"/>
+            <div class="text-center" style="margin-top: 10px;">
+                <a href="{{ path('nexus_core_homepage') }}" class="btn btn-primary btn-lg" role="button">Play &raquo;</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center"><i class="fa fa-tasks fa-5x"></i></p>
+                    <h2 class="text-center">Work</h2>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center"><i class="fa fa-bolt fa-5x"></i></p>
+                    <h2 class="text-center">Fight</h2>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center"><i class="fa fa-heart-o  fa-5x"></i></p>
+                    <h2 class="text-center">Survive</h2>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center"><i class="fa fa-trophy  fa-5x"></i></p>
+                    <h2 class="text-center">Brag</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col-md-4">
+        <h1><i class="fa fa-tasks"></i> Work</h1>
+        <p>Your work influence your character. We designed Nexus around few core principles:</p>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info">You get experience from closing <strong>tickets</strong></li>
+            <li class="list-group-item list-group-item-danger">You take damage based on your amount of <strong>FCR</strong> Hits</li>
+            <li class="list-group-item list-group-item-warning">You mitigate those damage based on your <strong>CSAT</strong></li>
+            <li class="list-group-item list-group-item-success">Your fighting skills are based on your <strong>AHT</strong></li>
+        </ul>
+
+        <p>These rules will determines your character for the week, as displayed below:</p>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="{{ asset('images/NexusCharacter/G05.png')}}" class="img-responsive img-avatar"/>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="text-center"><strong>Name</strong></p>
+                        <p class="text-center">level</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}"/>
+                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}"/> 
+                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}"/> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ asset('bundles/nexuscore/images/health.png') }}"/> 
+                        <img src="{{ asset('bundles/nexuscore/images/xp.png') }}"/>  
+                    </div>
+                    <div class="col-md-9">                          
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                80/100
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 36%;">
+                                40/112
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p><img src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="PWR"/>Power determines how <strong>Strong</strong> your character is. PWR is influenced by your level</p>
+        <p><img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="AS"/>Attack Speed determines how <strong>Fast</strong> your character is. AS is influenced by your average handled time</p>
+        <p><img src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS"/>Together they determine your Damage Per Second.</p>
+        <p><img src="{{ asset('bundles/nexuscore/images/health.png') }}" alt="HP"/>Your Health bar represents how much damage your character can suffer before he <strong>dies</strong>.</p>
+        <p><img src="{{ asset('bundles/nexuscore/images/xp.png') }}" alt="XP"/>Your Experience bar represent how much XP you need to <strong>level up</strong></p>
+    </div>
+
+    <div class="col-md-4">
+        <h1><i class="fa fa-bolt"></i> Fight</h1>
+        <p>You can fight up to <strong>three</strong> monsters each week.</p>
+        <p>Monsters are a huge source of XP but they can also be very...lethal.</p>
+        <p>Like you, monsters are determined by their level, class and DPS:</p>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="{{ asset('images/NexusMonster/Ghoul.png')}}" class="img-responsive img-avatar"/>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="text-center"><strong>Name</strong></p>
+                        <p class="text-center">level</p>
+                        <p class="text-center"><strong>class</strong></p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}"/>
+                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}"/> 
+                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}"/> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ asset('bundles/nexuscore/images/health.png') }}"/> 
+                        <img src="{{ asset('bundles/nexuscore/images/xp.png') }}"/>  
+                    </div>
+                    <div class="col-md-9">                          
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                80/100
+                            </div>
+                        </div>
+                        <div>42 xp</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <p>On average a player will fight against monsters his level, but you never know what is going to happen in Nexus</p>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info">Normal monsters have 50HP, <strong>Elites</strong> have 75HP</li>
+            <li class="list-group-item list-group-item-danger">Elites also do more damage</li>
+            <li class="list-group-item list-group-item-warning">Monsters level and class are random. Level varies from +0 to +2 (compared to you).</li>
+            <li class="list-group-item list-group-item-success">Elites reward more XP than normal monsters.</li>
+        </ul>
+    </div>    
+
+    <div class="col-md-4">
+        <h1><i class="fa fa-heart-o"></i> Survive</h1>
+        <p>Your are not immortal. Your health is very limited and needs to be managed.</p>
+        <p>There is only a few way to get some health back</p>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info">If you <strong>level up</strong>, you will be fully healed</li>
+            <li class="list-group-item list-group-item-danger">If you <strong>die</strong>, you will also be fully healed, but will suffer from <strong>XP loss</strong>.</li>
+            <li class="list-group-item list-group-item-success">If you kill a monster, you will get some health back. </li>
+        </ul>
+
+        <h1><i class="fa fa-trophy"></i> Brag</h1>
+        <p>You can keep track of everyone's activity in Nexus. Victory, death, level up or level down, everything can be seen and shared with everyone.</p>
+
+        <h1><i class="fa fa-question"></i> What's next</h1>
+        <p>We are working hard on providing you with regular updates on Nexus. Here's a glimpse at the next Nexus features, in no particular order:</p>
+        <ul>
+            <li> <strong>Talents</strong>: There's no RPG without a proper talent system. Do you want to personalize your character to your needs? Soon you'll be able to.</li>
+            <li> <strong>Loots</strong>: Everybody loves loot. We do too. Fighting monsters will be more and more rewarding</li>
+            <li> <strong>PvP</strong>: What best opponent than you own neighbour?</li>
+            <li> Dungeons, Achievements, Classes...</li></ul>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
