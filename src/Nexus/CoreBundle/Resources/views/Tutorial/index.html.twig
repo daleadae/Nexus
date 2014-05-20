@@ -38,108 +38,129 @@
 <div class="container">
     <div class="col-md-4">
         <h1><i class="fa fa-tasks"></i> Work</h1>
-        <p>Your work influence your character. We designed Nexus around few core principles:</p>
+        <p>Work influence your character. We designed Nexus around four core principles:</p>
         <ul class="list-group">
-            <li class="list-group-item list-group-item-info">You get experience from closing <strong>tickets</strong></li>
-            <li class="list-group-item list-group-item-danger">You take damage based on your amount of <strong>FCR</strong> Hits</li>
-            <li class="list-group-item list-group-item-warning">You mitigate those damage based on your <strong>CSAT</strong></li>
-            <li class="list-group-item list-group-item-success">Your fighting skills are based on your <strong>AHT</strong></li>
+            <li class="list-group-item list-group-item-info"><strong>Productivity</strong> gives you Experience</li>
+            <li class="list-group-item list-group-item-danger"><strong>FCR hits</strong> damages you</li>
+            <li class="list-group-item list-group-item-warning"><strong>CSAT</strong> protects you</li>
+            <li class="list-group-item list-group-item-success"><strong>AHT</strong> makes you faster</li>
         </ul>
 
-        <p>These rules will determines your character for the week, as displayed below:</p>
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#charactersheet">
+            Tell me more
+        </button>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img src="{{ asset('images/NexusCharacter/G05.png')}}" class="img-responsive img-avatar"/>
+        <!-- Modal -->
+        <div class="modal fade" id="charactersheet" tabindex="-1" role="dialog" aria-labelledby="charactersheetLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="charactersheetLabel">Your character sheet</h4>
                     </div>
-                    <div class="col-md-3">
-                        <p class="text-center"><strong>Name</strong></p>
-                        <p class="text-center">level</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}"/>
-                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}"/> 
-                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}"/> 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <img src="{{ asset('bundles/nexuscore/images/health.png') }}"/> 
-                        <img src="{{ asset('bundles/nexuscore/images/xp.png') }}"/>  
-                    </div>
-                    <div class="col-md-9">                          
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                80/100
+                    <div class="modal-body">
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="{{ asset('images/NexusTutorial/charactersheet.png')}}" class="img-responsive img-avatar center-block"/>
                             </div>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 36%;">
-                                40/112
-                            </div>
-                        </div>
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/health.png') }}" alt="HP">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Health Points : HP</h4>
+                                    <p>Health Points are how much damage you can suffer before you <strong>die</strong>. This bar will show you how much Health left you have.</p>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/xp.png') }}" alt="XP">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Experience Points : XP</h4>
+                                    <p>Experience points are necessary to <strong>level up</strong>. This bar will show you how much you need for your next level.</p>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="PWR">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Power : PWR</h4>
+                                    <p>Power makes you <strong>Strong</strong>. Your level directly influences your power. Gather more experience to increase your level.</p>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="AS">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Attack Speed : AS</h4>
+                                    <p>Attack Speed makes you <strong>Fast</strong>. Your Average Handle Time (AHT) directly influences your attack speed. Reduce your AHT in order to increase your Attack Speed.</p>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Damage per second : DPS</h4>
+                                    <p>Damage per Second is the amount of health you remove to a monster each turn. Your Power and Attack Speed together determines your Damage per Second.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <p><img src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="PWR"/>Power determines how <strong>Strong</strong> your character is. PWR is influenced by your level</p>
-        <p><img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="AS"/>Attack Speed determines how <strong>Fast</strong> your character is. AS is influenced by your average handled time</p>
-        <p><img src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS"/>Together they determine your Damage Per Second.</p>
-        <p><img src="{{ asset('bundles/nexuscore/images/health.png') }}" alt="HP"/>Your Health bar represents how much damage your character can suffer before he <strong>dies</strong>.</p>
-        <p><img src="{{ asset('bundles/nexuscore/images/xp.png') }}" alt="XP"/>Your Experience bar represent how much XP you need to <strong>level up</strong></p>
     </div>
 
     <div class="col-md-4">
         <h1><i class="fa fa-bolt"></i> Fight</h1>
-        <p>You can fight up to <strong>three</strong> monsters each week.</p>
-        <p>Monsters are a huge source of XP but they can also be very...lethal.</p>
-        <p>Like you, monsters are determined by their level, class and DPS:</p>
+        <p>Fighting is the best way to collect more experience. Nexus allows <strong>three</strong> fights per week. In Nexus you will fight Monsters, they are source of experience and/or death.</p>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info">Monsters level and class (Normal or Elite) are random.</li>
+            <li class="list-group-item list-group-item-danger">Elites are very dangerous.</li>
+            <li class="list-group-item list-group-item-success">Elites are very rewarding.</li>
+        </ul>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img src="{{ asset('images/NexusMonster/Ghoul.png')}}" class="img-responsive img-avatar"/>
+
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#fight">
+            Tell me more
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="fight" tabindex="-1" role="dialog" aria-labelledby="fightLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="fightLabel">Monsters</h4>
                     </div>
-                    <div class="col-md-3">
-                        <p class="text-center"><strong>Name</strong></p>
-                        <p class="text-center">level</p>
-                        <p class="text-center"><strong>class</strong></p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="{{ asset('bundles/nexuscore/images/power.png') }}"/>
-                        <img src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}"/> 
-                        <img src="{{ asset('bundles/nexuscore/images/dps.png') }}"/> 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <img src="{{ asset('bundles/nexuscore/images/health.png') }}"/> 
-                        <img src="{{ asset('bundles/nexuscore/images/xp.png') }}"/>  
-                    </div>
-                    <div class="col-md-9">                          
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                80/100
-                            </div>
+                    <div class="modal-body">
+                        <div id="monsterchart" style="width:80%; height: 300px; margin: 0 auto">
                         </div>
-                        <div>42 xp</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <p>On average a player will fight against monsters his level, but you never know what is going to happen in Nexus</p>
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-info">Normal monsters have 50HP, <strong>Elites</strong> have 75HP</li>
-            <li class="list-group-item list-group-item-danger">Elites also do more damage</li>
-            <li class="list-group-item list-group-item-warning">Monsters level and class are random. Level varies from +0 to +2 (compared to you).</li>
-            <li class="list-group-item list-group-item-success">Elites reward more XP than normal monsters.</li>
-        </ul>
     </div>    
 
     <div class="col-md-4">
@@ -166,6 +187,115 @@
     </div>
 
 </div>
+{% endblock %}
 
 
+{% block javascripts %}
+{{ parent() }}
+
+<script type="text/javascript">
+    $(function () {
+
+        var colors = Highcharts.getOptions().colors,
+            categories = ['Normal', 'Elite'],
+            name = 'Class',
+            data = [{
+                y: 80,
+                color: colors[0],
+                drilldown: {
+                    name: 'Normal',
+                    categories: ['+0 level', '+1 level', '+2 levels'],
+                    data: [48, 24, 8],
+                    color: colors[0]
+                }
+            }, {
+                y: 20,
+                color: colors[1],
+                drilldown: {
+                    name: 'Elite',
+                    categories: ['+0 level', '+1 level', '+2 levels'],
+                    data: [12, 6, 2],
+                    color: colors[1]
+                }
+            }];
+
+
+        // Build the data arrays
+        var classData = [];
+        var levelData = [];
+        for (var i = 0; i < data.length; i++) {
+
+            // add browser data
+            classData.push({
+                name: categories[i],
+                y: data[i].y,
+                color: data[i].color
+            });
+
+            // add version data
+            for (var j = 0; j < data[i].drilldown.data.length; j++) {
+                var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+                levelData.push({
+                    name: data[i].drilldown.categories[j],
+                    y: data[i].drilldown.data[j],
+                    color: Highcharts.Color(data[i].color).brighten(brightness).get()
+                });
+            }
+        }
+
+        // Create the chart
+        $('#monsterchart').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Monsters density'
+            },
+            yAxis: {
+                title: {
+                    text: 'What kind of monster can you fight?'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    shadow: false,
+                    center: ['50%', '50%']
+                }
+            },
+            tooltip: {
+                valueSuffix: '%'
+            },
+            series: [{
+                name: 'Class',
+                data: classData,
+                size: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        return this.y > 5 ? this.point.name : null;
+                    },
+                    color: 'white',
+                    distance: -30
+                }
+            }, {
+                name: 'Level',
+                data: levelData,
+                size: '80%',
+                innerSize: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        // display only if larger than 1
+                        return this.y > 1 ? '<b>'+ this.point.name +':</b> '+ this.y +'%'  : null;
+                    }
+                }
+            }]
+        });
+    });
+
+
+</script>
+
+{% javascripts filter='?yui_js' output='js/minify/*.js'
+%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
 {% endblock %}
