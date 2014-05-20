@@ -6,28 +6,25 @@
         <h1>Nexus. <strike>Work Hard</strike>. Play Harder.</h1>
         <div class="col-md-3">
             <img src="{{ asset('images/NexusCharacter/G01.png')}}" class="img-responsive img-avatar"/>
-            <div class="text-center" style="margin-top: 10px;">
-                <a href="{{ path('nexus_core_homepage') }}" class="btn btn-primary btn-lg" role="button">Play &raquo;</a>
-            </div>
+
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-6">
-                    <p class="text-center"><i class="fa fa-tasks fa-5x"></i></p>
+                <div class="col-md-4">
+                    <p class="text-center"><i class="fa fa-tasks fa-4x"></i></p>
                     <h2 class="text-center">Work</h2>
                 </div>
-                <div class="col-md-6">
-                    <p class="text-center"><i class="fa fa-bolt fa-5x"></i></p>
+                <div class="col-md-4">
+                    <p class="text-center"><i class="fa fa-bolt fa-4x"></i></p>
                     <h2 class="text-center">Fight</h2>
                 </div>
-                <div class="col-md-6">
-                    <p class="text-center"><i class="fa fa-heart-o  fa-5x"></i></p>
+                <div class="col-md-4">
+                    <p class="text-center"><i class="fa fa-heart-o  fa-4x"></i></p>
                     <h2 class="text-center">Survive</h2>
                 </div>
-                <div class="col-md-6">
-                    <p class="text-center"><i class="fa fa-trophy  fa-5x"></i></p>
-                    <h2 class="text-center">Brag</h2>
-                </div>
+            </div>
+            <div class="pull-right" style="margin-top:20px;">
+                <a href="{{ path('nexus_core_homepage') }}" class="btn btn-primary btn-lg" role="button">Play &raquo;</a>
             </div>
         </div>
 
@@ -36,156 +33,164 @@
 
 
 <div class="container">
-    <div class="col-md-4">
-        <h1><i class="fa fa-tasks"></i> Work</h1>
-        <p>Work influence your character. We designed Nexus around four core principles:</p>
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-info"><strong>Productivity</strong> gives you Experience</li>
-            <li class="list-group-item list-group-item-danger"><strong>FCR hits</strong> damages you</li>
-            <li class="list-group-item list-group-item-warning"><strong>CSAT</strong> protects you</li>
-            <li class="list-group-item list-group-item-success"><strong>AHT</strong> makes you faster</li>
-        </ul>
 
-        <!-- Button trigger modal -->
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#charactersheet">
-            Tell me more
-        </button>
+    <div class="row">
+        <div class="col-md-4">
+            <h1><i class="fa fa-tasks"></i> Work</h1>
+            <p>Work influences your character. Nexus is designed around four core principles:</p>
+        </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="charactersheet" tabindex="-1" role="dialog" aria-labelledby="charactersheetLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="charactersheetLabel">Your character sheet</h4>
+        <div class="col-md-4">
+            <h1><i class="fa fa-bolt"></i> Fight</h1>
+            <p>Fighting monsters can improve your experience up to <strong>three</strong> times per week.</p>
+
+        </div>
+
+        <div class="col-md-4">
+            <h1><i class="fa fa-heart-o"></i> Survive</h1>
+            <p>Your are not immortal. Your health is limited and needs to be managed. To regain some health you will have to:</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><i class="fa fa-lightbulb-o"></i><strong>Productivity</strong> gives you Experience</li>
+                <li class="list-group-item list-group-item-info"><i class="fa fa-info"></i><strong>AHT</strong> makes you faster</li>
+                <li class="list-group-item list-group-item-danger"><i class="fa fa-warning"></i><strong>FCR hits</strong> damages you</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-shield"></i><strong>CSAT</strong> protects you</li>
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><i class="fa fa-random"></i>Monsters are random.</li>
+                <li class="list-group-item list-group-item-danger"><i class="fa fa-warning"></i>Elites are very dangerous.</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-star"></i>Elites are very rewarding.</li>
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><i class="fa fa-level-up"></i><strong>Level up</strong>: you will be fully healed</li>
+                <li class="list-group-item list-group-item-danger"><i class="fa fa-warning"></i><strong>Die</strong>: you will also be fully healed, but will suffer from <strong>XP loss</strong>.</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-smile-o"></i><strong>Kill</strong> a monster: you will get some  minor health back. </li>
+            </ul>
+        </div> 
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Button trigger modal -->
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#charactersheet">
+                Tell me more
+            </button> 
+        </div>
+
+        <div class="col-md-4">
+            <!-- Button trigger modal -->
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#fight">
+                Tell me more
+            </button>
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+
+
+    <!-- Modal Character Sheet -->
+    <div class="modal fade" id="charactersheet" tabindex="-1" role="dialog" aria-labelledby="charactersheetLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="charactersheetLabel">Your character sheet</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img src="{{ asset('images/NexusTutorial/charactersheet.png')}}" class="img-responsive img-avatar center-block"/>
+                        </div>
                     </div>
-                    <div class="modal-body">
-
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <img src="{{ asset('images/NexusTutorial/charactersheet.png')}}" class="img-responsive img-avatar center-block"/>
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="{{ asset('bundles/nexuscore/images/health.png') }}" alt="HP">
                             </div>
-                        </div>
-                        <ul class="media-list">
-                            <li class="media">
-                                <div class="pull-left">
-                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/health.png') }}" alt="HP">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Health Points : HP</h4>
-                                    <p>Health Points are how much damage you can suffer before you <strong>die</strong>. This bar will show you how much Health left you have.</p>
-                                </div>
-                            </li>
+                            <div class="media-body">
+                                <h4 class="media-heading">Health Points : HP</h4>
+                                <p>Health Points are how much damage you can suffer before you <strong>die</strong>. This bar will show you how much Health left you have.</p>
+                            </div>
+                        </li>
 
-                            <li class="media">
-                                <div class="pull-left">
-                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/xp.png') }}" alt="XP">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Experience Points : XP</h4>
-                                    <p>Experience points are necessary to <strong>level up</strong>. This bar will show you how much you need for your next level.</p>
-                                </div>
-                            </li>
+                        <li class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="{{ asset('bundles/nexuscore/images/xp.png') }}" alt="XP">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Experience Points : XP</h4>
+                                <p>Experience points are necessary to <strong>level up</strong>. This bar will show you how much you need for your next level.</p>
+                            </div>
+                        </li>
 
-                            <li class="media">
-                                <div class="pull-left">
-                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="PWR">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Power : PWR</h4>
-                                    <p>Power makes you <strong>Strong</strong>. Your level directly influences your power. Gather more experience to increase your level.</p>
-                                </div>
-                            </li>
+                        <li class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="{{ asset('bundles/nexuscore/images/power.png') }}" alt="PWR">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Power : PWR</h4>
+                                <p>Power makes you <strong>Strong</strong>. Your level directly influences your power. Gather more experience to increase your level.</p>
+                            </div>
+                        </li>
 
-                            <li class="media">
-                                <div class="pull-left">
-                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="AS">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Attack Speed : AS</h4>
-                                    <p>Attack Speed makes you <strong>Fast</strong>. Your Average Handle Time (AHT) directly influences your attack speed. Reduce your AHT in order to increase your Attack Speed.</p>
-                                </div>
-                            </li>
+                        <li class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="{{ asset('bundles/nexuscore/images/attackSpeed.png') }}" alt="AS">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Attack Speed : AS</h4>
+                                <p>Attack Speed makes you <strong>Fast</strong>. Your Average Handle Time (AHT) directly influences your attack speed. Reduce your AHT in order to increase your Attack Speed.</p>
+                            </div>
+                        </li>
 
-                            <li class="media">
-                                <div class="pull-left">
-                                    <img class="media-object" src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Damage per second : DPS</h4>
-                                    <p>Damage per Second is the amount of health you remove to a monster each turn. Your Power and Attack Speed together determines your Damage per Second.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                        <li class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="{{ asset('bundles/nexuscore/images/dps.png') }}" alt="DPS">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Damage per second : DPS</h4>
+                                <p>Damage per Second is the amount of health you remove to a monster each turn. Your Power and Attack Speed together determines your Damage per Second.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-
     </div>
 
-    <div class="col-md-4">
-        <h1><i class="fa fa-bolt"></i> Fight</h1>
-        <p>Fighting is the best way to collect more experience. Nexus allows <strong>three</strong> fights per week. In Nexus you will fight Monsters, they are source of experience and/or death.</p>
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-info">Monsters level and class (Normal or Elite) are random.</li>
-            <li class="list-group-item list-group-item-danger">Elites are very dangerous.</li>
-            <li class="list-group-item list-group-item-success">Elites are very rewarding.</li>
-        </ul>
-
-
-        <!-- Button trigger modal -->
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#fight">
-            Tell me more
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="fight" tabindex="-1" role="dialog" aria-labelledby="fightLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="fightLabel">Monsters</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div id="monsterchart" style="width:80%; height: 300px; margin: 0 auto">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+    <!-- Modal Fight -->
+    <div class="modal fade" id="fight" tabindex="-1" role="dialog" aria-labelledby="fightLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="fightLabel">Monsters</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Monsters are generated randomly, as describe by the chart below. You can't know which monster you're going to fight beforehand, so be careful when deciding to fight. </p>
+                    <div id="monsterchart"  style="width:450px; height:300px;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-
-    </div>    
-
-    <div class="col-md-4">
-        <h1><i class="fa fa-heart-o"></i> Survive</h1>
-        <p>Your are not immortal. Your health is very limited and needs to be managed.</p>
-        <p>There is only a few way to get some health back</p>
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-info">If you <strong>level up</strong>, you will be fully healed</li>
-            <li class="list-group-item list-group-item-danger">If you <strong>die</strong>, you will also be fully healed, but will suffer from <strong>XP loss</strong>.</li>
-            <li class="list-group-item list-group-item-success">If you kill a monster, you will get some health back. </li>
-        </ul>
-
-        <h1><i class="fa fa-trophy"></i> Brag</h1>
-        <p>You can keep track of everyone's activity in Nexus. Victory, death, level up or level down, everything can be seen and shared with everyone.</p>
-
-        <h1><i class="fa fa-question"></i> What's next</h1>
-        <p>We are working hard on providing you with regular updates on Nexus. Here's a glimpse at the next Nexus features, in no particular order:</p>
-        <ul>
-            <li> <strong>Talents</strong>: There's no RPG without a proper talent system. Do you want to personalize your character to your needs? Soon you'll be able to.</li>
-            <li> <strong>Loots</strong>: Everybody loves loot. We do too. Fighting monsters will be more and more rewarding</li>
-            <li> <strong>PvP</strong>: What best opponent than you own neighbour?</li>
-            <li> Dungeons, Achievements, Classes...</li></ul>
-
     </div>
-
 </div>
 {% endblock %}
 
@@ -245,6 +250,11 @@
 
         // Create the chart
         $('#monsterchart').highcharts({
+
+            credits: {
+                enabled: false
+            },
+
             chart: {
                 type: 'pie'
             },
